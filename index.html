@@ -12,17 +12,32 @@
 
     <!-- Styles -->
     <style>
+        #fab_button,
+        [src="up_arrow.png"] {
+            border-radius: 1000px;
+            -webkit-border-radius: 1000px;
+            -moz-border-radius: 1000px;
+            width: 50px;
+            height: 50px;
+            float: right;
+            margin: 10px;
+            margin-top: -50px;
+        }
+        
         .wrapper {
             height: 100vh;
             overflow-x: hidden;
             overflow-y: auto;
-            margin: 0;
             padding: 0;
+            margin: 0 auto;
         }
         
         html,
-        body {
+        body,
+        html::-webkit-scrollbar,
+        body::-webkit-scrollbar {
             height: 100%;
+            margin-bottom: 0.01em;
             width: 100%;
             /* Set the height to match that of the viewport. */
             height: 100vh;
@@ -42,24 +57,7 @@
             vertical-align: middle;
         }
         
-        .flex-center {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            text-align: center;
-            align-content: center;
-            align-items: center;
-            justify-content: center;
-            vertical-align: middle;
-        }
-        
         .content {
-            margin-top: 10%;
-            text-align: center;
-            align-content: center;
-            align-items: center;
-            justify-content: center;
-            vertical-align: middle;
             height: 100%;
             width: 100%;
             /* Set the height to match that of the viewport. */
@@ -93,6 +91,7 @@
         }
         
         .link_items {
+            color: #212121;
             text-align: center;
             align-content: center;
             align-items: center;
@@ -108,13 +107,13 @@
             align-content: center;
             align-items: center;
             justify-content: center;
-            padding: 20%;
             margin-left: 20%;
             margin-right: 20%;
             transition: 1s;
+            text-decoration: none;
         }
         
-        a.link_items:hover {
+        .links .link_items:hover {
             background-color: azure;
             color: black;
             text-align: center;
@@ -126,15 +125,6 @@
             height: 80px;
         }
         
-        content {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-        }
-        
         .m-b-md {
             margin-bottom: 30px;
             text-align: center;
@@ -143,39 +133,25 @@
             justify-content: center;
         }
         
-        .second_page h1 {
-            font-size: 100px;
-            color: #242424;
-            text-align: center;
-            align-content: center;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: -20px;
-            margin-left: -5%;
-        }
-        
-        .second_page {
-            background-color: greenyellow;
-            margin-left: -20px;
-            width: 110%;
-        }
-        
         footer {
             background-color: black;
             color: beige;
-            margin-left: -20%;
-            width: 140%;
-            margin-top: 20px;
+        }
+        
+        center .content {
+            margin-top: 9%;
         }
         
         .cv_pic {
-            border-radius: 100%;
+            border-radius: 1000px;
+            -webkit-border-radius: 1000px;
+            -moz-border-radius: 1000px;
             width: 25%;
             height: 50%;
         }
         
-        embed,
-        embed::-webkit-scrollbar {
+        iframe,
+        iframe::-webkit-scrollbar {
             overflow: hidden;
             scrollbar-width: none;
             -ms-overflow-style: none;
@@ -187,14 +163,68 @@
             -ms-overflow-style: none;
         }
         
+        .resume.content .links {
+            font-size: 44px;
+        }
+        
+        #portfolio .column {
+            width: 25%;
+            padding: 20px;
+            display: inline-block;
+            grid-template-rows: auto;
+        }
+        /* Remove extra left and right margins, due to padding in columns */
+        
+        #portfolio .row {
+            margin: 0 -5px;
+        }
+        /* Clear floats after the columns */
+        
+        #portfolio .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* Style the counter cards */
+        
+        #portfolio .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            /* this adds the "card" effect */
+            padding: 16px;
+            text-align: center;
+            background-color: #f1f1f1;
+            border-radius: 20px;
+        }
+        
+        #portfolio .img_projects {
+            width: 200px;
+            transition: 1s;
+        }
+        
+        #portfolio .img_projects:hover {
+            width: 210px;
+            transition: .25s;
+        }
+        
+        #portfolio .link_items {
+            padding: 20px;
+            margin-bottom: 60px;
+        }
+        
         @media (max-width: 600px) {
+            center .content {
+                margin-top: 15%;
+            }
             .cv_pic {
                 margin-top: 65px;
                 width: auto;
                 padding: 0 30px;
-                background-color: red;
-                max-width: 65%;
-                max-height: 40%;
+                /* background-color: red; */
+                max-width: 55%;
+                max-height: 30%;
+                border-radius: 3000px;
+                -webkit-border-radius: 3000px;
+                -moz-border-radius: 3000px;
             }
             embed,
             embed::-webkit-scrollbar {
@@ -207,11 +237,29 @@
                 scrollbar-width: none;
                 -ms-overflow-style: none;
             }
+            .title {
+                font-size: 63px;
+            }
+            .resume {
+                text-align: center;
+            }
+            #portfolio .column {
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;
+                margin-left: -18px;
+            }
+            footer {
+                display: none
+            }
+            #fab_button {
+                display: none;
+            }
         }
     </style>
 </head>
 
-<body class="wrapper">
+<body class="wrapper" id="top">
     <center>
 
 
@@ -224,40 +272,111 @@
 
         <div class="links">
             <!-- <a class="link_items" href="/links/google_drive">My Google Drive</a> -->
-            <a class="link_items" href="/links/resume">Resume</a>
-            <a class="link_items" href="/links/vb_net">Portfolio</a>
+            <a class="link_items" href="#resume">Resume</a>
+            <a class="link_items" href="#portfolio">Portfolio</a>
             <!-- <a class="link_items" href="../src/moneyloan/index.php">MoneyLoan - PHP <br>(College Project)</a> -->
             <a class="link_items" href="https://github.com/gcnmagdaleno">GitHub</a>
             <a class="link_items" href="https://github.com/gcnmagdaleno">Contact
                     me</a>
+            <br><br>
         </div>
         </div>
-
-
-
 
         <div class="second_page">
 
-            <h1>RESUME
+
+            <div class="resume content" id="resume">
+                <hr class="resume_hr">
+                <b class="links">
+                RESUME<br><a href="gian_cv_with_pic.pdf" download><b  style="padding:10px;">(DOWNLOAD MY RESUME)</b></a>
+                </b><br><br>
+                <object src="cv.php" width="90%" height="80%" style="border-width :0px;"> <iframe src="cv.php" width="90%" height="80%" style="border-width :0px;" ></iframe></object>
+
+            </div>
 
 
-                <h1>
-                    <embed src="gian_cv_with_pic.pdf" width="80%" height="800px" />
+            <div>
+                <br><br>
+            </div>
 
+            <div class="resume content" id="portfolio">
+                <hr class="resume_hr">
+                <b class="links">
+                    PORTFOLIO<br></b>
+                <br>
+
+
+
+
+                <div class="row">
+                    <div class="column">
+                        <a class="link_items" href="moneyloan/index.php" target="_blank">
+                            <div class="card"><img class="img_projects" src="project_one.png"><br>Project #1</div>
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a class="link_items" href="moneyloan/index.php" target="_blank">
+                            <div class="card"><img class="img_projects" src="project_one.png"><br>Project #2</div>
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a class="link_items" href="moneyloan/index.php" target="_blank">
+                            <div class="card"><img class="img_projects" src="project_one.png"><br>Project #3</div>
+                        </a>
+                    </div>
+
+                    <div class="column">
+                        <a class="link_items" href="moneyloan/index.php" target="_blank">
+                            <div class="card"><img class="img_projects" src="project_one.png"><br>Project #4</div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
 
         </div>
+        <a href="#top"><b id="fab_button"><img src="up_arrow.png" alt="Icons made by https://www.flaticon.com/authors/roundicon [Roundicons]"></b></a>
+
+
+
         <footer>
+
 
 
             This one is a footer.
 
 
         </footer>
-
-
-
     </center>
 </body>
 
 
 </html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Add smooth scrolling to all links
+        $("a").on('click', function(event) {
+
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 200, function() {
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+    });
+</script>
