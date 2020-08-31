@@ -1,370 +1,370 @@
-<<<<<<< HEAD <<<<<<< gian-gcnmagdaleno-fix008 <!DOCTYPE html>
-    <html lang=en>
+<!DOCTYPE html>
+<html lang=en>
 
-    <head>
-        <meta charset=utf-8>
-        <meta name=viewport content="width=device-width, initial-scale=1">
-        <title>Portfolio</title>
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel=stylesheet>
-        <style>
-            #fab_button,
-            [src="up_arrow.webp"] {
-                border-radius: 1000px;
-                -webkit-border-radius: 1000px;
-                -moz-border-radius: 1000px;
-                width: 50px;
-                height: 50px;
-                float: right;
-                margin: 10px;
-                margin-top: -50px;
-            }
-            
-            .wrapper {
-                height: 100vh;
-                overflow-x: hidden;
-                overflow-y: auto;
-                padding: 0;
-                margin: 0 auto
-            }
-            
+<head>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel=stylesheet>
+    <style>
+        #fab_button,
+        [src="up_arrow.webp"] {
+            border-radius: 1000px;
+            -webkit-border-radius: 1000px;
+            -moz-border-radius: 1000px;
+            width: 50px;
+            height: 50px;
+            float: right;
+            margin: 10px;
+            margin-top: -50px;
+        }
+        
+        .wrapper {
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding: 0;
+            margin: 0 auto
+        }
+        
+        html,
+        body,
+        html::-webkit-scrollbar,
+        body::-webkit-scrollbar {
+            height: 100%;
+            margin-bottom: .01em;
+            width: 100%;
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            background-color: #e4c9c2;
+            color: #755139;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 100;
+            text-align: center;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle
+        }
+        
+        .first_page,
+        .resume.content {
+            height: 100%;
+            width: 100%;
+            height: 100vh;
+            width: 100vw
+        }
+        
+        .title {
+            font-size: 84px;
+            text-align: center;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle
+        }
+        
+        .links>a {
+            color: #636b6f;
+            padding: 0 25px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            text-align: center;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle
+        }
+        
+        .link_items {
+            color: #212121;
+            text-align: center;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle;
+            position: relative;
+            height: 80px;
+            display: flex;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            vertical-align: middle;
+            text-align: center;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            margin-left: 20%;
+            margin-right: 20%;
+            transition: 1s;
+            text-decoration: none
+        }
+        
+        .links .link_items:hover {
+            background-color: azure;
+            color: black;
+            text-align: center;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: 1s;
+            height: 80px;
+            box-shadow: 12px 32px 12px 1px rgba(5, 5, 5, 0.2);
+        }
+        
+        .m-b-md {
+            margin-bottom: 30px;
+            text-align: center;
+            align-content: center;
+            align-items: center;
+            justify-content: center
+        }
+        
+        footer div {
+            background-color: black;
+            color: beige
+        }
+        
+        center .content {
+            margin-top: 9%
+        }
+        
+        .cv_pic {
+            border-radius: 1000px;
+            -webkit-border-radius: 1000px;
+            -moz-border-radius: 1000px;
+            width: 25%;
+            height: 50%
+        }
+        
+        iframe,
+        iframe::-webkit-scrollbar {
+            overflow: hidden;
+            scrollbar-width: none;
+            -ms-overflow-style: none
+        }
+        
+         ::-webkit-scrollbar {
+            display: none;
+            scrollbar-width: none;
+            -ms-overflow-style: none
+        }
+        
+        .resume.content .links {
+            font-size: 44px
+        }
+        
+        #portfolio .column {
+            width: 25%;
+            padding: 20px;
+            display: inline-block;
+            grid-template-rows: auto
+        }
+        
+        #portfolio .row {
+            margin: 0 -5px
+        }
+        
+        #portfolio .row:after {
+            content: "";
+            display: table;
+            clear: both
+        }
+        
+        #portfolio .card {
+            box-shadow: 0 16px 39px 0 rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            text-align: center;
+            background-color: #f1f1f1;
+            border-radius: 20px;
+            height: 130px;
+        }
+        
+        #portfolio .card:hover {
+            box-shadow: 0 32px 68px 0 rgba(87, 195, 173, 0.2);
+        }
+        
+        #portfolio .img_projects {
+            margin-top: 10px;
+            width: 210px;
+            transition: 1s;
+            height: 100px;
+        }
+        
+        #portfolio .img_projects:hover {
+            width: 230px;
+            transition: .25s
+        }
+        
+        #portfolio .link_items {
+            padding: 20px;
+            margin-bottom: 60px
+        }
+        
+        @media(max-width:600px) {
             html,
-            body,
-            html::-webkit-scrollbar,
-            body::-webkit-scrollbar {
-                height: 100%;
-                margin-bottom: .01em;
-                width: 100%;
-                height: 100vh;
-                width: 100vw;
-                margin: 0;
-                padding: 0;
-                scroll-behavior: smooth;
-                background-color: #e4c9c2;
-                color: #755139;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 100;
-                text-align: center;
-                align-content: center;
-                align-items: center;
-                justify-content: center;
-                vertical-align: middle
+            body {
+                margin-left: 12.5px
             }
-            
-            .first_page,
-            .resume.content {
-                height: 100%;
-                width: 100%;
-                height: 100vh;
-                width: 100vw
-            }
-            
-            .title {
-                font-size: 84px;
-                text-align: center;
-                align-content: center;
-                align-items: center;
-                justify-content: center;
-                vertical-align: middle
-            }
-            
-            .links>a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-                text-align: center;
-                align-content: center;
-                align-items: center;
-                justify-content: center;
-                vertical-align: middle
-            }
-            
-            .link_items {
-                color: #212121;
-                text-align: center;
-                align-content: center;
-                align-items: center;
-                justify-content: center;
-                vertical-align: middle;
-                position: relative;
-                height: 80px;
-                display: flex;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: auto;
-                vertical-align: middle;
-                text-align: center;
-                align-content: center;
-                align-items: center;
-                justify-content: center;
-                margin-left: 20%;
-                margin-right: 20%;
-                transition: 1s;
-                text-decoration: none
-            }
-            
-            .links .link_items:hover {
-                background-color: azure;
-                color: black;
-                text-align: center;
-                align-content: center;
-                align-items: center;
-                justify-content: center;
-                font-weight: bold;
-                transition: 1s;
-                height: 80px;
-                box-shadow: 12px 32px 12px 1px rgba(5, 5, 5, 0.2);
-            }
-            
-            .m-b-md {
-                margin-bottom: 30px;
-                text-align: center;
-                align-content: center;
-                align-items: center;
-                justify-content: center
-            }
-            
-            footer div {
-                background-color: black;
-                color: beige
-            }
-            
             center .content {
-                margin-top: 9%
+                margin-top: 15%
             }
-            
             .cv_pic {
-                border-radius: 1000px;
-                -webkit-border-radius: 1000px;
-                -moz-border-radius: 1000px;
-                width: 25%;
-                height: 50%
+                margin-top: 65px;
+                width: auto;
+                padding: 0 30px;
+                max-width: 55%;
+                max-height: 30%;
+                border-radius: 3000px;
+                -webkit-border-radius: 3000px;
+                -moz-border-radius: 3000px
             }
-            
-            iframe,
-            iframe::-webkit-scrollbar {
+            embed,
+            embed::-webkit-scrollbar {
                 overflow: hidden;
                 scrollbar-width: none;
                 -ms-overflow-style: none
             }
-            
              ::-webkit-scrollbar {
                 display: none;
                 scrollbar-width: none;
                 -ms-overflow-style: none
             }
-            
-            .resume.content .links {
-                font-size: 44px
+            .title {
+                font-size: 63px
             }
-            
+            .resume {
+                text-align: center
+            }
             #portfolio .column {
-                width: 25%;
-                padding: 20px;
-                display: inline-block;
-                grid-template-rows: auto
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;
+                margin-left: -18px
             }
-            
-            #portfolio .row {
-                margin: 0 -5px
+            footer div {
+                display: none;
             }
-            
-            #portfolio .row:after {
-                content: "";
-                display: table;
-                clear: both
+            #fab_button {
+                display: none
             }
-            
-            #portfolio .card {
-                box-shadow: 0 16px 39px 0 rgba(0, 0, 0, 0.2);
-                padding: 16px;
-                text-align: center;
-                background-color: #f1f1f1;
-                border-radius: 20px;
-                height: 130px;
+            .resume .show {
+                display: none
             }
-            
-            #portfolio .card:hover {
-                box-shadow: 0 32px 68px 0 rgba(87, 195, 173, 0.2);
+            .resume.content {
+                height: 10vh
             }
-            
-            #portfolio .img_projects {
-                margin-top: 10px;
-                width: 210px;
-                transition: 1s;
-                height: 100px;
-            }
-            
-            #portfolio .img_projects:hover {
-                width: 230px;
-                transition: .25s
-            }
-            
-            #portfolio .link_items {
-                padding: 20px;
-                margin-bottom: 60px
-            }
-            
-            @media(max-width:600px) {
-                html,
-                body {
-                    margin-left: 12.5px
-                }
-                center .content {
-                    margin-top: 15%
-                }
-                .cv_pic {
-                    margin-top: 65px;
-                    width: auto;
-                    padding: 0 30px;
-                    max-width: 55%;
-                    max-height: 30%;
-                    border-radius: 3000px;
-                    -webkit-border-radius: 3000px;
-                    -moz-border-radius: 3000px
-                }
-                embed,
-                embed::-webkit-scrollbar {
-                    overflow: hidden;
-                    scrollbar-width: none;
-                    -ms-overflow-style: none
-                }
-                 ::-webkit-scrollbar {
-                    display: none;
-                    scrollbar-width: none;
-                    -ms-overflow-style: none
-                }
-                .title {
-                    font-size: 63px
-                }
-                .resume {
-                    text-align: center
-                }
-                #portfolio .column {
-                    width: 100%;
-                    display: block;
-                    margin-bottom: 20px;
-                    margin-left: -18px
-                }
-                footer div {
-                    display: none;
-                }
-                #fab_button {
-                    display: none
-                }
-                .resume .show {
-                    display: none
-                }
-                .resume.content {
-                    height: 10vh
-                }
-            }
-        </style>
-    </head>
+        }
+    </style>
+</head>
 
-    <body class=wrapper>
-        <center>
-            <div id=top>&nbsp;</div>
-            <div class="content first_page">
-                <img loading=eager class=cv_pic src=cv_pic.jpg>
-                <div class="title m-b-md"> Gian Carlo Magdaleno</div>
-            </div>
-            <div class=links>
-                <a class=link_items href=#resume>Resume</a>
-                <a class=link_items href=#portfolio>Portfolio</a>
-                <a class=link_items href=https://github.com/gcnmagdaleno>GitHub</a>
-                <a class=link_items href=https://github.com/gcnmagdaleno>Contact me</a>
-                <br>
-                <br>
-            </div>
-            </div>
-            <div class=second_page>
-                <div class="resume content" id="resume">
-                    <hr class=resume_hr>
-                    <b class=links> RESUME
+<body class=wrapper>
+    <center>
+        <div id=top>&nbsp;</div>
+        <div class="content first_page">
+            <img loading=eager class=cv_pic src=cv_pic.jpg>
+            <div class="title m-b-md"> Gian Carlo Magdaleno</div>
+        </div>
+        <div class=links>
+            <a class=link_items href=#resume>Resume</a>
+            <a class=link_items href=#portfolio>Portfolio</a>
+            <a class=link_items href=https://github.com/gcnmagdaleno>GitHub</a>
+            <a class=link_items href=https://github.com/gcnmagdaleno>Contact me</a>
+            <br>
+            <br>
+        </div>
+        </div>
+        <div class=second_page>
+            <div class="resume content" id="resume">
+                <hr class=resume_hr>
+                <b class=links> RESUME
 												<br>
 													<a href=gian_cv_with_pic.pdf download>
 														<b style=padding:10px>(DOWNLOAD MY RESUME)</b>
-                    </a>
-                    </b>
-                    <br>
-                    <br>
-                    <object class=show src=cv.html width=90% height=80% style=border-width:0>
+                </a>
+                </b>
+                <br>
+                <br>
+                <object class=show src=cv.html width=90% height=80% style=border-width:0>
 															<iframe class=show src=cv.html width=90% height=80% style=border-width:0></iframe>
 														</object>
-                </div>
-                <div>
-                    <br>
-                    <br>
-                </div>
-                <div class="resume content" id="portfolio">
-                    <hr class=resume_hr>
-                    <b class=links> PORTFOLIO
+            </div>
+            <div>
+                <br>
+                <br>
+            </div>
+            <div class="resume content" id="portfolio">
+                <hr class=resume_hr>
+                <b class=links> PORTFOLIO
 																		<br>
 																		</b>
-                    <br>
-                    <div class=row>
-                        <div class=column>
-                            <a class=link_items href=./moneyloan/index.php target=_blank>
-                                <div class=card>
-                                    <img loading=lazy class=img_projects src=project_one.webp>
-                                    <br>Project #1
-                                </div>
-                            </a>
-                        </div>
-                        <div class=column>
-                            <a class=link_items href=./ictd/index.html target=_blank>
-                                <div class=card>
-                                    <img loading=lazy class=img_projects src=ictd/ictd.png>
-                                    <br>Project #2
-                                </div>
-                            </a>
-                        </div>
-                        <div class=column>
-                            <a class=link_items href=moneyloan/index.php target=_blank>
-                                <div class=card>
-                                    <img loading=lazy class=img_projects src=project_one.webp>
-                                    <br>Project #3
-                                </div>
-                            </a>
-                        </div>
-                        <div class=column>
-                            <a class=link_items href=moneyloan/index.php target=_blank>
-                                <div class=card>
-                                    <img loading=lazy class=img_projects src=project_one.webp>
-                                    <br>Project #4
-                                </div>
-                            </a>
-                        </div>
+                <br>
+                <div class=row>
+                    <div class=column>
+                        <a class=link_items href=./moneyloan/index.php target=_blank>
+                            <div class=card>
+                                <img loading=lazy class=img_projects src=project_one.webp>
+                                <br>Project #1
+                            </div>
+                        </a>
+                    </div>
+                    <div class=column>
+                        <a class=link_items href=./ictd/index.html target=_blank>
+                            <div class=card>
+                                <img loading=lazy class=img_projects src=ictd/ictd.png>
+                                <br>Project #2
+                            </div>
+                        </a>
+                    </div>
+                    <div class=column>
+                        <a class=link_items href=moneyloan/index.php target=_blank>
+                            <div class=card>
+                                <img loading=lazy class=img_projects src=project_one.webp>
+                                <br>Project #3
+                            </div>
+                        </a>
+                    </div>
+                    <div class=column>
+                        <a class=link_items href=moneyloan/index.php target=_blank>
+                            <div class=card>
+                                <img loading=lazy class=img_projects src=project_one.webp>
+                                <br>Project #4
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
-            <a href=#top>
-                <b id=fab_button>
+        </div>
+        <a href=#top>
+            <b id=fab_button>
 																											<img loading=lazy src=up_arrow.webp alt="Icons made by https://www.flaticon.com/authors/roundicon [Roundicons]">
 																											</b>
-            </a>
-            <!-- <footer>
+        </a>
+        <!-- <footer>
                 <div> This one is a footer.</div>
             </footer> -->
-        </center>
-    </body>
+    </center>
+</body>
 
-    </html>
-    <script>
-        $(document).ready(function() {
-            $("a").on("click", function(a) {
-                if (this.hash !== "") {
-                    a.preventDefault();
-                    var b = this.hash;
-                    $("html, body").animate({
-                        scrollTop: $(b).offset().top
-                    }, 200, function() {
-                        window.location.hash = b
-                    })
-                }
-            })
-        });
-    </script>
+</html>
+<script>
+    $(document).ready(function() {
+        $("a").on("click", function(a) {
+            if (this.hash !== "") {
+                a.preventDefault();
+                var b = this.hash;
+                $("html, body").animate({
+                    scrollTop: $(b).offset().top
+                }, 200, function() {
+                    window.location.hash = b
+                })
+            }
+        })
+    });
+</script>
