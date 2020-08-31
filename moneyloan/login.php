@@ -40,12 +40,12 @@
 
               $_SESSION['User_ID'] = $rows["User_ID"];
               
-              echo "<script>alert('Successfully Logged-in: user'); window.location.href='biana/user_index.php';</script>";
+              // echo "<script>alert('Successfully Logged-in: user'); window.location.href='biana/user_index.php';</script>";
 
              
         
             }else if ($position=="admin"){
-              echo "<script>alert('Successfully Logged-in:admin'); window.location.href='biana/admin_index.php';</script>";
+              // echo "<script>alert('Successfully Logged-in:admin'); window.location.href='biana/admin_index.php';</script>";
             }
 
                           // echo "<script>alert('Successfully Logged-in:admin'); window.location.href='biana/';</script>";
@@ -56,13 +56,13 @@
 
       }else{
         
-        echo "<script>alert('incorrect username/password'); window.location.href='#';</script>";
+        // echo "<script>alert('incorrect username/password'); window.location.href='#';</script>";
       }
     
 
   }catch(PDOException $e) {
     // echo "Error: " . $e->getMessage();
-    echo "<script>alert('incorrect username/password'); window.location.href='#';</script>";
+    // echo "<script>alert('incorrect username/password'); window.location.href='#';</script>";
 }
 $conn = null;
 
