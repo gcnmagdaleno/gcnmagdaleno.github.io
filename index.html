@@ -19,14 +19,6 @@
             margin-top: -50px;
         }
         
-        .wrapper {
-            height: 100vh;
-            overflow-x: hidden;
-            overflow-y: auto;
-            padding: 0;
-            margin: 0 auto
-        }
-        
         html,
         body,
         html::-webkit-scrollbar,
@@ -51,7 +43,11 @@
         }
         
         .first_page,
-        .resume.content {
+        .third_page,
+        .fourth_page,
+        .fifth_page,
+        .resume.content,
+        .wrapper {
             height: 100%;
             width: 100%;
             height: 100vh;
@@ -105,7 +101,7 @@
             text-decoration: none
         }
         
-        .links .link_items:hover {
+        .links a.link_items[href*="#"]:hover {
             background-color: azure;
             color: black;
             text-align: center;
@@ -116,6 +112,10 @@
             transition: 1s;
             height: 80px;
             box-shadow: 12px 32px 12px 1px rgba(5, 5, 5, 0.2);
+        }
+        
+        a {
+            text-decoration: none;
         }
         
         .m-b-md {
@@ -139,8 +139,8 @@
             border-radius: 1000px;
             -webkit-border-radius: 1000px;
             -moz-border-radius: 1000px;
-            width: 25%;
-            height: 50%
+            width: 20%;
+            height: auto;
         }
         
         iframe,
@@ -207,7 +207,11 @@
             margin-bottom: 60px
         }
         
-        @media(max-width:600px) {
+        #github img {
+            width: 54%;
+        }
+        
+        @media(max-width:720px) {
             html,
             body {
                 margin-left: 12.5px
@@ -260,27 +264,37 @@
             .resume.content {
                 height: 10vh
             }
+            #github a {
+                margin-left: -22px;
+                font-size: 23px;
+            }
+            #github img {
+                width: 90%;
+            }
+            #portfolio .card:hover {
+                box-shadow: 32px 32px 68px 32px rgba(87, 195, 173, 0.2);
+            }
         }
     </style>
 </head>
 
-<body class=wrapper>
+<body class="wrapper">
     <center>
         <div id=top>&nbsp;</div>
-        <div class="content first_page">
+        <div class="content wrapper">
             <img loading=eager class=cv_pic src=cv_pic.jpg>
             <div class="title m-b-md"> Gian Carlo Magdaleno</div>
         </div>
         <div class=links>
-            <a class=link_items href=#resume>Resume</a>
-            <a class=link_items href=#portfolio>Portfolio</a>
-            <a class=link_items href=https://github.com/gcnmagdaleno>GitHub</a>
-            <a class=link_items href=https://github.com/gcnmagdaleno>Contact me</a>
+            <a class="link_items" href=#resume>Resume</a>
+            <a class="link_items" href="#github">GitHub</a>
+            <a class="link_items" href="#contactme">Contact me</a>
+            <a class="link_items" href="#portfolio">Portfolio</a>
             <br>
             <br>
         </div>
         </div>
-        <div class=second_page>
+        <div class="resume">
             <div class="resume content" id="resume">
                 <hr class=resume_hr>
                 <b class=links> RESUME
@@ -291,62 +305,98 @@
                 </b>
                 <br>
                 <br>
-                <object class=show src=cv.html width=90% height=80% style=border-width:0>
-															<iframe class=show src=cv.html width=90% height=80% style=border-width:0></iframe>
+                <object loading="lazy" class=show src=cv.html width=90% height=80% style=border-width:0>
+															<iframe loading="lazy" class=show src=cv.html width=90% height=80% style=border-width:0></iframe>
 														</object>
             </div>
             <div>
                 <br>
                 <br>
             </div>
-            <div class="resume content" id="portfolio">
-                <hr class=resume_hr>
-                <b class=links> PORTFOLIO
-																		<br>
-																		</b>
-                <br>
-                <div class=row>
-                    <div class=column>
-                        <a class=link_items href=./moneyloan/index.php target=_blank>
-                            <div class=card>
-                                <img loading=lazy class=img_projects src=project_one.webp>
-                                <br>Project #1
-                            </div>
-                        </a>
-                    </div>
-                    <div class=column>
-                        <a class=link_items href=./ictd/index.html target=_blank>
-                            <div class=card>
-                                <img loading=lazy class=img_projects src=ictd/ictd.png>
-                                <br>Project #2
-                            </div>
-                        </a>
-                    </div>
-                    <div class=column>
-                        <a class=link_items href=moneyloan/index.php target=_blank>
-                            <div class=card>
-                                <img loading=lazy class=img_projects src=project_one.webp>
-                                <br>Project #3
-                            </div>
-                        </a>
-                    </div>
-                    <div class=column>
-                        <a class=link_items href=moneyloan/index.php target=_blank>
-                            <div class=card>
-                                <img loading=lazy class=img_projects src=project_one.webp>
-                                <br>Project #4
-                            </div>
-                        </a>
-                    </div>
+        </div>
+
+
+
+
+
+        <div class="wrapper">
+
+            <div class="resume content" id="github">
+
+                <hr class="resume_hr">
+
+                <b class="links"> GITHUB <br><br>
+                            <a href="https://github.com/gcnmagdaleno">
+                        <img loading="lazy" src="https://api.thumbnail.ws/api/abc72b590dc7c1b601ed352a92c018737bc9447d4e2a/thumbnail/get?url=https://github.com/gcnmagdaleno/&width=768">
+                      <br><br>
+                     <div class="link">see all of my github repositories</div></a>
+                    </b></div>
+        </div>
+
+
+        <div class="wrapper">
+            <div class="resume content" id="contactme">
+                <div class="resume content" id="github">
+
+                    <hr class="resume_hr">
+                    <b class="links"> CONTACT ME 
+
                 </div>
             </div>
         </div>
-        <a href=#top>
-            <b id=fab_button>
+
+            <div class="wrapper">
+                <div class="resume content" id="portfolio">
+                    <hr class=resume_hr>
+                    <b class=links> PORTFOLIO
+                                                                            <br>
+                                                                            </b>
+                    <br>
+                    <div class=row>
+                        <div class=column>
+                            <a class=link_items href=./moneyloan/index.php target=_blank>
+                                <div class=card>
+                                    <img loading=lazy class=img_projects src=project_one.webp>
+                                    <br>Project #1
+                                </div>
+                            </a>
+                        </div>
+                        <div class=column>
+                            <a class=link_items href=./ictd/index.html target=_blank>
+                                <div class=card>
+                                    <img loading=lazy class=img_projects src=ictd/ictd.png>
+                                    <br>Project #2
+                                </div>
+                            </a>
+                        </div>
+                        <div class=column>
+                            <a class=link_items href=moneyloan/index.php target=_blank>
+                                <div class=card>
+                                    <img loading=lazy class=img_projects src=project_one.webp>
+                                    <br>Project #3
+                                </div>
+                            </a>
+                        </div>
+                        <div class=column>
+                            <a class=link_items href=jec/index.html target=_blank>
+                                <div class=card style="height: 240px!important;margin-top:120px!important;margin-bottom: 20px;">
+                                    <img loading=lazy class=img_projects src=jec/jec.webp style="height: 200px!important;">
+                                    <br>Project #4
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href=#top>
+                <b id=fab_button>
 																											<img loading=lazy src=up_arrow.webp alt="Icons made by https://www.flaticon.com/authors/roundicon [Roundicons]">
 																											</b>
-        </a>
-        <!-- <footer>
+            </a>
+
+
+
+            <!-- <footer>
                 <div> This one is a footer.</div>
             </footer> -->
     </center>
