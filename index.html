@@ -66,6 +66,8 @@
         
         ._links {
             font-size: 35px;
+
+            vertical-align: middle
         }
         
         html,
@@ -254,7 +256,12 @@
             background-color: pink;
         }
         
-        @media(max-width:600px) {
+        #portfolio .img_projects.jec {
+            height: 300px;
+            width: 300px;
+        }
+        
+        @media(max-width:800px) {
             html,
             body {
                 margin-left: 12.5px
@@ -390,20 +397,21 @@
             <img loading=eager class=cv_pic src=cv_pic.jpg>
             <div class="title m-b-md"> Gian Carlo<br>Magdaleno</div>
         </div>
-
-
-
         <div class="links wrapper">
             <a class=link_items href=#resume><br>Resume</a>
             <a class=link_items href=#portfolio><br>Portfolio</a>
             <a class=link_items href=https://github.com/gcnmagdaleno><br>GitHub</a>
             <a class=link_items href=#contactme><br>Contact me</a>
+        <div class=links>
+            <a class=link_items href=#resume><br><br>Resume</a>
+            <a class=link_items href=#portfolio><br><br>Portfolio</a>
+            <a class=link_items href=https://github.com/gcnmagdaleno><br><br>GitHub</a>
+            <a class=link_items href=https://github.com/gcnmagdaleno><br><br>Contact me</a>
             <br>
             <br>
 
         </div>
         </div>
-
         <div class="" id="resume">
 
             <hr class=resume_hr>
@@ -446,24 +454,82 @@
                     <h3>
                         I am easy to work with, can adjust fast to any environment, eager to learn something new everytime.<br>
                     </h3>
+
+        <div class=second_page>
+            <div class="resume content" id="resume">
+                <hr class=resume_hr>
+                <b class=links> RESUME
+												<br>
+													<a href=gian_cv_with_pic.pdf download>
+														<b style=padding:10px>(DOWNLOAD MY RESUME)</b>
+                </a>
+                </b>
+                <br>
+                <br>
+                <object class=show src=cv.html width=90% height=80% style=border-width:0>
+															<iframe class=show src=cv.html width=90% height=80% style=border-width:0></iframe>
+														</object>
+            </div>
+        </div>
+
+        <br>
+        <br><br>
+        </div>
+        <div class="" id="portfolio">
+            <hr class=resume_hr>
+            <b class=links> PORTFOLIO
+																		<br>
+																		</b>
+            <br>
+            <div class="container">
+                <div class="card wrapper">
+                    <a class=link_items href=./moneyloan/index.html target=_blank>
+
+                        <img loading=lazy class=img_projects src="./moneyloan/loan.webp">
+                        <br>Project #1
+
+                    </a>
+                </div>
+                <div class="card wrapper">
+                    <a class=link_items href=./ictd/index.html target=_blank>
+
+                        <img loading=lazy class=img_projects src=ictd/ictd.png>
+                        <br>Project #2
+
+                    </a>
+                </div>
+                <div class="card wrapper">
+                    <a class=link_items href=barangay/index.html target=_blank>
+
+                        <img loading=lazy class=img_projects src="./barangay/br.webp">
+                        <br>Project #3
+
+                    </a>
+                </div>
+                <div class="card wrapper">
+                    <a class=link_items href=jec/index.html target=_blank>
+
+                        <img loading=lazy class="img_projects jec" src="./jec/jec.webp">
+                        <br>Project #4
+
+                    </a>
+
                 </div>
                 <br>
 
             </div>
-
         </div>
+     
+
+
+
+       <!-- <div class="wrapper"></div>
 
         <div class="wrapper"></div>
 
         <div class="wrapper"></div>
 
-        <div class="wrapper"></div>
-
-        <div class="wrapper"></div>
-
-
-
-
+        <div class="wrapper"></div> -->
 
 
 
