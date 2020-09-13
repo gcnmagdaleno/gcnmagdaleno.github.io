@@ -1,6 +1,12 @@
 <script>
-    if (screen.width > 768) {
-        window.location = "index2.html"
+    function conditionRedirect() {
+        if (screen.width > 768) {
+            window.location = "index.html"
+        }
+    }
+
+    function redirect() {
+        setInterval(conditionRedirect, .0005);
     }
 </script>
 <!DOCTYPE html>
@@ -210,7 +216,7 @@
     </style>
 </head>
 
-<body class="body">
+<body class="body" onload="redirect()">
 
     <center>
 
