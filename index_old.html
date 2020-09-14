@@ -1,3 +1,15 @@
+<script>
+    function conditionRedirect() {
+        if (screen.width <= 768) {
+            window.location = "index-mobile.html"
+            document.write("Width: ".screen.width);
+        }
+    }
+
+    function redirect() {
+        setInterval(conditionRedirect, .0005);
+    }
+</script>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,45 +37,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Portfolio - Gian Carlo Nabor Magdaleno</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        /* @media (max-width: 1920px) and (max-height: 1080px) {
-            div {
-                background-color: blue;
-            }
-            .title {
-                background-color: red;
-            }
-            body {
-                height: 50%;
-                margin: 0;
-                height: 50vh;
-            }
+        body {
+            background-color: #363535;
         }
         
-        @media (max-width: 1366px) and (max-height: 768px) {
-            div {
-                background-color: black;
-            }
-            .title {
-                background-color: blue;
-            }
-            html,
-            body {
-                height: 100%;
-                margin: 0;
-                height: 100vh;
-            }
-        } */
+        .wrapper {}
         
-        @import url('https://fonts.googleapis.com/css2?family=Handlee &family=Neucha&family=Spartan:wght@900&display=swap');
-        /* custom fonts {
-            font-family: 'Handlee', cursive;
-            font-family: 'Neucha', cursive;
-            font-family: 'Spartan', sans-serif;
-        } */
+        .shadow {
+            -webkit-box-shadow: -1px -1px 69px -1px rgba(245, 226, 245, 1);
+            -moz-box-shadow: -1px -1px 69px -1px rgba(245, 226, 245, 1);
+            box-shadow: -1px -1px 69px -1px rgba(245, 226, 245, 1);
+        }
         
+        .full-h {
+            height: 100vh;
+        }
+        
+        .full-w {
+            width: 100%;
+        }
+        
+        .center {
+            display: grid;
+            place-items: center;
+        }
+        
+         ::-webkit-scrollbar {
+            display: none;
+            scrollbar-width: none;
+            -ms-overflow-style: none
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Handlee&family=Neucha&family=Spartan:wght@900&display=swap');
         #fab_button,
         [src="up_arrow.webp"] {
             border-radius: 1000px;
@@ -76,169 +84,76 @@
             z-index: 20;
         }
         
-        .checked {
-            color: orange;
-        }
-        
-        #top {
-            margin-top: 1%;
-        }
-        
         ._links {
             font-size: 35px;
-            font-family: 'Spartan', sans-serif;
-        }
-        
-        html,
-        body {
-            /* height: 100%; */
-            margin: 0;
-            /* width: 100%;
-            height: 100vh;
-            width: 100vw; */
-            padding: 0;
-            background-color: #e4c9c2;
-            color: #755139;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 100;
-            text-align: center;
-            align-content: center;
-            align-items: center;
-            justify-content: center;
-            vertical-align: middle;
-        }
-        
-        .title {
-            font-size: 64px;
-            text-align: center;
-            align-content: center;
-            align-items: center;
-            justify-content: center;
-            vertical-align: middle;
-            font-family: 'Architects Daughter', cursive;
-        }
-        
-        .links>a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 24px;
-            font-weight: 600;
-            letter-spacing: 0.1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-            text-align: center;
-            align-content: center;
-            align-items: center;
-            justify-content: center;
-            vertical-align: middle;
             font-family: 'Neucha', cursive;
         }
         
-        .links>a:hover {
-            color: black;
+        .first-page {
+            background-color: #e9cccb;
         }
         
-        .link_items,
-        #portfolio .link_items {
-            color: #212121;
+        .title {
+            color: #74513b;
+            font-family: 'Handlee', cursive;
+        }
+        
+        .third-page {
+            background-color: #565656;
+        }
+        
+        .nav a {
+            color: #e8e8e8;
             text-align: center;
             align-content: center;
             align-items: center;
             justify-content: center;
             position: relative;
-            height: 80px;
-            display: block;
-            grid-template-columns: 1fr;
-            grid-template-rows: auto;
             text-align: center;
             align-content: center;
             align-items: center;
             justify-content: center;
-            margin-left: 20%;
-            margin-right: 20%;
-            transition: none;
+            transition: .2s;
             text-decoration: none;
-            font-size: 25px;
-            width: 50%;
+            font-size: 20px;
             border-radius: 100px;
         }
         
-        .links.p-5 .link_items:hover {
+        .nav a:hover {
             background-color: azure;
-            color: black;
+            color: white;
             text-align: center;
             align-content: center;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            transition: 0.2s ease;
+            font-weight: bolder;
+            transition: 0.3s;
             /* transform: translate3d(0, 20, 2); */
-            height: 80px;
-            box-shadow: 12px 32px 12px 1px rgba(5, 5, 5, 0.2);
+            box-shadow: 12px 32px 12px 1px rgb(255, 255, 255);
             overflow-y: hidden;
+            /* font-size: 20px; */
         }
         
-        .m-b-md {
-            margin-bottom: 30px;
-            text-align: center;
-            align-content: center;
-            align-items: center;
-            justify-content: center
+        div.col:hover p {
+            background-color: white;
+            box-shadow: 1px 3px 1px 1px blue;
+            color: black;
+            font-weight: bolder;
         }
         
-        footer div {
-            background-color: black;
-            color: beige
+        div .link_items:hover p {
+            /* margin-top: -25px; */
         }
         
-        .cv_pic {
-            border-radius: 1000px;
-            -webkit-border-radius: 1000px;
-            -moz-border-radius: 1000px;
-            width: 350px;
-            height: 350px;
+        .second-page {
+            background-color: #dcdcb7;
         }
         
-         ::-webkit-scrollbar {
-            display: none;
-            scrollbar-width: none;
-            -ms-overflow-style: none
+        .fourth-page {
+            background-color: #ffc2d0;
         }
         
-        .resume.content .links,
-        #portfolio .links {
-            font-size: 44px
-        }
-        
-        #portfolio .link_items {
-            padding: 20px;
-            margin-bottom: 60px
-        }
-        
-        #portfolio .img_projects {
-            width: 100%;
-        }
-        
-        #portfolio .container {
-            text-align: center;
-        }
-        
-        #portfolio .card {
-            height: 50%;
-            width: 50%;
-            height: 50vh;
-            width: 50vw;
-            text-align: center;
-            align-content: center;
-            align-self: center;
-        }
-        
-        #portfolio .img_projects.jec {
-            height: 300px;
-            width: 300px;
-        }
-        
-        .container.contact_numbers {
+        .contact-numbers {
             padding: 50px;
             display: inline-block;
         }
@@ -261,33 +176,6 @@
             top: -23px;
         }
         
-        #contactme {
-            background-color: pink;
-        }
-        
-        .links.p-5 .link_items {
-            color: white;
-            padding: 1em;
-            text-align: center;
-            display: block;
-            text-decoration: none !important;
-            margin: 0 auto;
-        }
-        
-        .links.p-5 {
-            overflow-y: hidden;
-        }
-        
-        #resume {
-            padding: 20px;
-        }
-        
-        .link_items.p-5:hover p {
-            font-size: 40px;
-            margin-top: 15px;
-            transition: 0.5s;
-        }
-        
         .rating.contact_numbers {
             display: flex;
             flex-wrap: wrap;
@@ -297,19 +185,10 @@
             align-content: center;
             align-items: center;
             justify-content: center;
+            background-color: #ffc2d0
         }
         
         .rating.contact_numbers .rating {
-            /* background: #242424;
-            width: 20%;
-            padding: 20px;
-            color: beige;
-            display: block;
-            text-align: center;
-            text-align: center;
-            align-content: center;
-            align-items: center;
-            justify-content: center; */
             background-color: #242424;
             width: 30%;
             margin: 10px;
@@ -319,27 +198,72 @@
             color: beige;
             margin: 40px;
         }
+        
+        .rating.contact_numbers {
+            padding: 100px;
+        }
+        
+        .checked {
+            color: orange;
+        }
+        
+        .fifth-page {
+            background-color: wheat;
+        }
     </style>
-
 </head>
 
-<body class="p-5 ">
+<body class="body rounded-circle" onload="redirect()">
 
     <center>
-        <h3>A DESKTOP/TABLET OR A DEVICE WITH A LARGE SCREEN IS RECOMMENDED FOR THE BEST VIEWING EXPERIENCE OF THIS PORTFOLIO</h6>
-            <div id="top">&nbsp;</div>
 
-            <div class="p-5" id="title">
-                <img loading="eager" class="cv_pic" src="cv_pic.jpg">
-                <div class="title m-b-md">
-                    Gian Carlo<br>Magdaleno</div>
+        <div class="wrapper m-5 w-75 card border-dark mb-3">
+
+            <div class="nav navbar text-center full-w sticky-top bg-dark
+                    text-white">
+                <label class="full-w">
+                        <a class="top text-warning full-w" href="#top">
+                            <p>BACK TO TOP</p>
+                        </a>
+                    </label>
+                <div class="row row-cols-4 full-w mb-n3 mt-n3">
+                    <div class="col full-w">
+                        <a class="link_items" href="#resume">
+                            <p class="rounded-pill">Resume</p>
+                        </a>
+
+                    </div>
+                    <div class="col full-w">
+                        <a class="link_items" href="#contactme">
+                            <p class="rounded-pill">Contact me</p>
+                        </a>
+                    </div>
+                    <div class="col full-w">
+                        <a class="link_items" href="#portfolio">
+                            <p class="rounded-pill">Portfolio</p>
+                        </a>
+                    </div>
+                    <div class="col full-w">
+                        <a class="link_items" target="_blank" href="https://github.com/gcnmagdaleno">
+                            <p class="rounded-pill">GitHub</p>
+                        </a>
+                    </div>
+                </div>
             </div>
 
+            <div class="first-page center" id="top">
+                <br><br>
+                <div class="m-5" id="title">
+                    <img loading="eager" class="p-1 w-50 cv_pic
+                            rounded-circle" src="cv_pic.jpg">
+                    <div class="title display-1 full-w font-weight-bolder
+                            m-b-md">
+                        Gian Carlo<br>Magdaleno</div>
+                </div>
+                <br><br>
+            </div>
 
-            <div class="links p-5" style="background-color: gray;">
-                <div id="empty1">&nbsp;</div>
-
-
+            <!-- <div class="second-page center card-body pt-5 pb-5">
                 <a class="link_items p-5" href="#resume">
                     <p>Resume</p>
                 </a>
@@ -353,41 +277,32 @@
                 <a class="link_items p-5" target="_blank" href="https://github.com/gcnmagdaleno">
                     <p>GitHub</p>
                 </a>
-
-                <br>
-                <br>
-
-
-            </div>
-
-
-            <div class="w-100 mx-auto" id="resume" style="background-color: wheat;">
-                <br>
-                <!-- <hr class=resume_hr> -->
-                <b class="_links">
-                    RESUME
-                    <br>
-                    <a href="gian_cv_with_pic.pdf" download>
-                        <b style="padding:10px" class="link_items">(DOWNLOAD MY
-                            RESUME)</b>
-                </a>
-
-                <iframe class="p-5 show" src="cv.html" width="100%" height="70%" style="border-width:0"></iframe>
-
-
-                </b>
+            </div> -->
+            <div class="third-page h-100 pt-5 pb-5" id="resume">
                 <br><br>
+                <b class="_links display-4 center text-white">
+                        RESUME
+                        <br>
+                        <a href="gian_cv_with_pic.pdf" download>
+                            <b style="padding:10px" class="link_items h3">(DOWNLOAD
+                                MY
+                                RESUME)</b> </a>
 
+
+                <iframe class="p-5 full-h rounded show
+                            embed-responsive-item embed-responsive
+                            embed-responsive-16by9" src="cv.html" style="border-width:0;" allowfullscreen> </iframe>
+                </b>
             </div>
 
-            <div class="" id="contactme" style="background-color: pink;">
-                <br>
+            <div class="fourth-page center p-5" id="contactme">
+                <br><br>
                 <div style="display: block;" class="hr">
                     <hr>
-                    <b class="_links">
-                        ABOUT ME</b>
+                    <b class="_links h1">
+                            ABOUT ME <br><br></b>
                     <hr>
-                    <div class="container contact_numbers">
+                    <div class="contact-numbers">
                         <h1 style="text-align: left;" class="mycontacts">My Contacts
                             <br>
                             <p style="width:100%;height: 100px; text-align:
@@ -401,7 +316,7 @@
                             </b>
                         </h1>
                     </div>
-                    <div class="container contact_numbers">
+                    <div class="contact-numbers mb-n5">
                         <h1 style="text-align: center;">Hire Me
                         </h1>
                         <br>
@@ -409,25 +324,25 @@
                             I am easy to work with, can adjust fast to any environment,
                             <br> eager to learn something new everytime.
                             <br>Takes the work seriously,
-                            <br>I just need a little guidance sometimes
+                            <br>Just needs a little guidance sometimes
                             <br> to check if I am doing the right thing.
                         </h2>
 
                         <h3>
-                            I am easy to work with, can adjust fast to any environment, eager to learn something new everytime.<br> Hoping to be working with you or your company/organization soon!
+                            <br> Hoping to be working with you or your company/organization soon!
+
                         </h3>
+
+
                     </div>
 
-
-                    <br>
-
                 </div>
-
             </div>
-            <div class="rating contact_numbers p-5" style="background-color:
-                pink;">
 
-                <div class="rating">
+            <div class="rating contact_numbers mt-n5">
+
+                <div class="skills title h1 center full-w">Skills</div>
+                <div class="rating rounded">
 
                     <b>PHP</b><br>
                     <span class="fa fa-star checked"></span>
@@ -438,7 +353,7 @@
                     <span class="fa fa-star"></span>
                 </div>
 
-                <div class="rating">
+                <div class="rating rounded">
 
                     <b>CSS</b><br>
 
@@ -446,12 +361,12 @@
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
 
                 </div>
 
-                <div class="rating">
+                <div class="rating rounded">
 
                     <b>HTML</b><br>
 
@@ -464,7 +379,7 @@
 
                 </div>
 
-                <div class="rating">
+                <div class="rating rounded">
 
                     <b>JAVASCRIPT</b><br>
 
@@ -477,7 +392,7 @@
 
                 </div>
 
-                <div class="rating">
+                <div class="rating rounded">
 
                     <b>ANDROID<br> (JAVA)</b><br>
                     <span class="fa fa-star checked"></span>
@@ -488,9 +403,9 @@
                     <span class="fa fa-star"></span>
                 </div>
 
-                <div class="rating">
+                <div class="rating rounded">
 
-                    <b>DATABASES <br>(MYSQL, FIREBASE/FIRESTORE)</b>
+                    <b>DATABASES <br>(MYSQL, FIREBASE)</b>
                     <br>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
@@ -498,73 +413,99 @@
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
+
+                </div>
+
+                <div class="rating rounded">
+
+                    <b>VB.NET</b><br>
+
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+
+                </div>
+
+                <div class="rating rounded">
+
+                    <b>LARAVEL</b><br>
+
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+
+                </div>
+
+                <div class="rating rounded">
+
+                    <b>JIRA</b><br>
+
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+
                 </div>
 
             </div>
 
-            <div class="" id="portfolio"><br><br>
-                <b class=" _links"> PORTFOLIO
-                    <br>
-                </b>
-                <br>
-                <div class="container p-5">
-                    <div class="card p-5">
-                        <a class=link_items href=./moneyloan/index.html target=_blank>
 
-                            <img loading="lazy" class=img_projects src="./moneyloan/loan.webp">
+
+            <div class="fifth-page h-100 pt-5 pb-5" id="portfolio"> <br> <br>
+                <b class="_links"> PORTFOLIO
+                </b>
+
+                <div class="p-5">
+                    <div class="p-5">
+                        <a class="link_items text-dark h2 font-weight-bolder" href=./moneyloan/index.html target=_blank>
+
+                            <img loading="lazy" class="img_projects w-75" src="./moneyloan/loan.webp">
                             <br>Project #1
 
                         </a>
                     </div>
-                    <div class="card p-5">
-                        <a class=link_items href=./ictd/index.html target=_blank>
+                    <div class="p-5">
+                        <a class="link_items text-dark h2 font-weight-bolder" href=./ictd/index.html target=_blank>
 
-                            <img loading=lazy class=img_projects src=ictd/ictd.png>
+                            <img loading=lazy class="img_projects w-75" src=ictd/ictd.png>
                             <br>Project #2
 
                         </a>
                     </div>
-                    <div class="card p-5">
-                        <a class=link_items href=barangay/index.html target=_blank>
+                    <div class="p-5">
+                        <a class="link_items text-dark h2 font-weight-bolder" href=barangay/index.html target=_blank>
 
-                            <img loading=lazy class=img_projects src="./barangay/br.webp">
+                            <img loading=lazy class="img_projects w-75" src="./barangay/br.webp">
                             <br>Project #3
 
                         </a>
                     </div>
-                    <div class="card p-5">
-                        <a class=link_items href=jec/index.html target=_blank>
-                            <img loading=lazy class="img_projects jec" src="./jec/jec.webp">
+                    <div class="p-5">
+                        <a class="link_items text-dark h2 font-weight-bolder" href=jec/index.html target=_blank>
+                            <img loading=lazy class="img_projects w-50 jec" src="./jec/jec.webp">
                             <br>Project #4
 
                         </a>
-
-
                     </div>
-                    <a href="#top">
-                        <b id="fab_button">
-                            <img loading="lazy" src="up_arrow.webp" alt="Icons
-                                made by
-                                https://www.flaticon.com/authors/roundicon
-                                [Roundicons]">
-                        </b></a>
+                    <!-- 
+            <div class="sixth-page h-100 pt-5 pb-5">
+
+            </div> -->
                 </div>
 
-            </div>
-            <!-- 
-                                                                                                                                                                                                                                                                        
-                                                                                                                                                                                                                                                                                <div class="p-5"></div>
-                                                                                                                                                                                                                                                                        
-                                                                                                                                                                                                                                                                                <div class="p-5"></div>
-                                                                                                                                                                                                                                                                        
-                                                                                                                                                                                                                                                                                <div class="p-5"></div> -->
-            <!-- <footer>
-                                                                                                                                                                            <div> This one is a footer.</div>
-                                                                                                                                                                        </footer> -->
     </center>
 </body>
 
 </html>
+
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 <script type="text/javascript" src="js/jquery.js"></script>
