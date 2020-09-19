@@ -2,7 +2,7 @@
     function conditionRedirect() {
         if (screen.width <= 768) {
             window.location = "index-mobile.html"
-
+            document.write("Width: ".screen.width);
         }
     }
 
@@ -40,65 +40,16 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-         :root,
-        * {
-            color: azure;
-        }
-        
-        @keyframes shake {
-            60% {
-                transform: rotate(5deg);
-            }
-            80% {
-                transform: rotate(-5deg);
-            }
-            100% {
-                transform: rotate(0deg);
-            }
-        }
-        
         body {
-            /* Used to enable scrolling */
-            background: linear-gradient( rgba(38, 50, 56, 1), rgba(96, 125, 139, 1));
+            background-color: #363535;
         }
         
-        a[download] b {
-            color: white!important;
-        }
+        .wrapper {}
         
-        .wrapper,
-        .nav {
-            background-color: rgba(38, 50, 56, 1);
-        }
-        
-        .first-page {
-            background-color: rgba(38, 50, 56, 1)!important;
-        }
-        
-        .second-page {
-            background-color: rgba(84, 110, 122, 1)!important;
-        }
-        
-        .third-page {
-            background-color: rgba(55, 71, 79, 1)!important;
-        }
-        
-        .text-dark {
-            color: #6b778d!important;
-        }
-        
-        .fourth-page {
-            background-color: rgba(69, 90, 100, 1)!important;
-        }
-        
-        .fifth-page {
-            background-color: rgba(96, 125, 139, 1)!important;
-        }
-        
-        .shadow:hover {
+        .shadow {
             -webkit-box-shadow: -1px -1px 69px -1px rgba(245, 226, 245, 1);
             -moz-box-shadow: -1px -1px 69px -1px rgba(245, 226, 245, 1);
-            box-shadow: -1px -1px 69px -1px rgba(21, 21, 21, 1)!important;
+            box-shadow: -1px -1px 69px -1px rgba(245, 226, 245, 1);
         }
         
         .full-h {
@@ -119,9 +70,6 @@
             scrollbar-width: none;
             -ms-overflow-style: none
         }
-        /* .rating.rounded:hover {
-            animation: shake .5s;
-        } */
         
         @import url('https://fonts.googleapis.com/css2?family=Handlee&family=Neucha&family=Spartan:wght@900&display=swap');
         #fab_button,
@@ -138,13 +86,20 @@
         
         ._links {
             font-size: 35px;
-            color: beige!important;
             font-family: 'Neucha', cursive;
         }
         
+        .first-page {
+            background-color: #e9cccb;
+        }
+        
         .title {
-            color: azure;
+            color: #74513b;
             font-family: 'Handlee', cursive;
+        }
+        
+        .third-page {
+            background-color: #565656;
         }
         
         .nav a {
@@ -187,44 +142,16 @@
         }
         
         div .link_items:hover p {
-            font-size: 25px;
-        }
-        
-        .link_items {
-            color: #242424!important;
-        }
-        
-        .rating.contact_numbers {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            text-align: center;
-            text-align: center;
-            align-content: center;
-            align-items: center;
-            justify-content: center;
-            padding: 100px;
-            background-color: rgba(84, 110, 122, 1)!important;
-        }
-        /* .first-page {
-            background-color: #e9cccb;
+            /* margin-top: -25px; */
         }
         
         .second-page {
             background-color: #dcdcb7;
         }
         
-        .third-page {
-            background-color: #565656;
-        }
-        
         .fourth-page {
             background-color: #ffc2d0;
         }
-        
-        .fifth-page {
-            background-color: wheat;
-        } */
         
         .contact-numbers {
             padding: 50px;
@@ -234,7 +161,7 @@
         #contactme .hr hr {
             width: 26%;
             border: none;
-            border-top: 3px double beige;
+            border-top: 3px double #333;
             color: #333;
             overflow: visible;
             text-align: center;
@@ -249,6 +176,18 @@
             top: -23px;
         }
         
+        .rating.contact_numbers {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            text-align: center;
+            text-align: center;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffc2d0
+        }
+        
         .rating.contact_numbers .rating {
             background-color: #242424;
             width: 30%;
@@ -256,39 +195,32 @@
             text-align: center;
             line-height: 75px;
             font-size: 25px;
+            color: beige;
             margin: 40px;
-            color: rgba(255, 248, 225, .8)!important;
         }
         
-        .rating.contact_numbers .rating:hover {
-            color: rgba(255, 248, 225, 1)!important;
+        .rating.contact_numbers {
+            padding: 100px;
         }
-        
-        .rating.contact_numbers .rating b {
-            color: rgba(255, 248, 255, 1)!important;
-        }
-        /* .rating.contact_numbers .rating:hover b {
-            color: rgba(255, 248, 255, 1)!important;
-        } */
         
         .checked {
-            color: rgba(255, 152, 0, .8)!important;
+            color: orange;
         }
         
-        .rating.rounded:hover .checked {
-            color: rgba(255, 152, 0, 1)!important;
+        .fifth-page {
+            background-color: wheat;
         }
     </style>
 </head>
 
-<body class="body card" onload="redirect()">
+<body class="body rounded-circle" onload="redirect()">
 
     <center>
 
-        <div class="wrapper m-5 w-75  mb-3">
+        <div class="wrapper m-5 w-75 card border-dark mb-3">
 
-            <div class="nav navbar text-center text-white full-w sticky-top
-                    text-dark">
+            <div class="nav navbar text-center full-w sticky-top bg-dark
+                    text-white">
                 <label class="full-w">
                         <a class="top text-warning full-w" href="#top">
                             <p>BACK TO TOP</p>
@@ -296,23 +228,23 @@
                     </label>
                 <div class="row row-cols-4 full-w mb-n3 mt-n3">
                     <div class="col full-w">
-                        <a class="link_items text-white" href="#resume">
+                        <a class="link_items" href="#resume">
                             <p class="rounded-pill">Resume</p>
                         </a>
 
                     </div>
                     <div class="col full-w">
-                        <a class="link_items text-white" href="#contactme">
+                        <a class="link_items" href="#contactme">
                             <p class="rounded-pill">Contact me</p>
                         </a>
                     </div>
                     <div class="col full-w">
-                        <a class="link_items text-white" href="#portfolio">
+                        <a class="link_items" href="#portfolio">
                             <p class="rounded-pill">Portfolio</p>
                         </a>
                     </div>
                     <div class="col full-w">
-                        <a class="link_items text-white" target="_blank" href="https://github.com/gcnmagdaleno">
+                        <a class="link_items" target="_blank" href="https://github.com/gcnmagdaleno">
                             <p class="rounded-pill">GitHub</p>
                         </a>
                     </div>
@@ -350,7 +282,7 @@
                 <br><br>
                 <b class="_links display-4 center text-white">
                         RESUME
-                        <br> <br> <br>
+                        <br>
                         <a href="gian_cv_with_pic.pdf" download>
                             <b style="padding:10px" class="link_items h3">(DOWNLOAD
                                 MY
@@ -398,9 +330,7 @@
 
                         <h3>
                             <br> Hoping to be working with you or your company/organization soon!
-                            <br>
-                            <br>
-                            <br>
+
                         </h3>
 
 
@@ -412,7 +342,7 @@
             <div class="rating contact_numbers mt-n5">
 
                 <div class="skills title h1 center full-w">Skills</div>
-                <div class="rating rounded shadow" data-toggle="tooltip" data-placement="top" title="Tooltip on top" role="tootltip">
+                <div class="rating rounded">
 
                     <b>PHP</b><br>
                     <span class="fa fa-star checked"></span>
@@ -423,7 +353,7 @@
                     <span class="fa fa-star"></span>
                 </div>
 
-                <div class="rating rounded shadow">
+                <div class="rating rounded">
 
                     <b>CSS</b><br>
 
@@ -436,7 +366,7 @@
 
                 </div>
 
-                <div class="rating rounded shadow">
+                <div class="rating rounded">
 
                     <b>HTML</b><br>
 
@@ -449,7 +379,7 @@
 
                 </div>
 
-                <div class="rating rounded shadow">
+                <div class="rating rounded">
 
                     <b>JAVASCRIPT</b><br>
 
@@ -462,7 +392,7 @@
 
                 </div>
 
-                <div class="rating rounded shadow">
+                <div class="rating rounded">
 
                     <b>ANDROID<br> (JAVA)</b><br>
                     <span class="fa fa-star checked"></span>
@@ -473,7 +403,7 @@
                     <span class="fa fa-star"></span>
                 </div>
 
-                <div class="rating rounded shadow">
+                <div class="rating rounded">
 
                     <b>DATABASES <br>(MYSQL, FIREBASE)</b>
                     <br>
@@ -486,7 +416,7 @@
 
                 </div>
 
-                <div class="rating rounded shadow">
+                <div class="rating rounded">
 
                     <b>VB.NET</b><br>
 
@@ -499,7 +429,7 @@
 
                 </div>
 
-                <div class="rating rounded shadow">
+                <div class="rating rounded">
 
                     <b>LARAVEL</b><br>
 
@@ -512,7 +442,7 @@
 
                 </div>
 
-                <div class="rating rounded shadow">
+                <div class="rating rounded">
 
                     <b>JIRA</b><br>
 
@@ -537,7 +467,7 @@
                     <div class="p-5">
                         <a class="link_items text-dark h2 font-weight-bolder" href=./moneyloan/index.html target=_blank>
 
-                            <img loading="lazy" class="img_projects w-50" src="./moneyloan/loan.webp">
+                            <img loading="lazy" class="img_projects w-75" src="./moneyloan/loan.webp">
                             <br>Project #1
 
                         </a>
@@ -545,7 +475,7 @@
                     <div class="p-5">
                         <a class="link_items text-dark h2 font-weight-bolder" href=./ictd/index.html target=_blank>
 
-                            <img loading=lazy class="img_projects w-50" src=ictd/ictd.png>
+                            <img loading=lazy class="img_projects w-75" src=ictd/ictd.png>
                             <br>Project #2
 
                         </a>
@@ -553,14 +483,14 @@
                     <div class="p-5">
                         <a class="link_items text-dark h2 font-weight-bolder" href=barangay/index.html target=_blank>
 
-                            <img loading=lazy class="img_projects w-50" src="./barangay/br.webp">
+                            <img loading=lazy class="img_projects w-75" src="./barangay/br.webp">
                             <br>Project #3
 
                         </a>
                     </div>
                     <div class="p-5">
                         <a class="link_items text-dark h2 font-weight-bolder" href=jec/index.html target=_blank>
-                            <img loading=lazy class="img_projects img-fluid w-50 jec" src="./jec/jec.webp">
+                            <img loading=lazy class="img_projects w-50 jec" src="./jec/jec.webp">
                             <br>Project #4
 
                         </a>
@@ -569,22 +499,17 @@
             <div class="sixth-page h-100 pt-5 pb-5">
 
             </div> -->
-                    <!-- </div> -->
                 </div>
-            </div>
-        </div>
-
-
 
     </center>
 </body>
 
 </html>
 
-<script type="text/javascript" src="js/popper.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 <script type="text/javascript" src="js/jquery.js"></script>
 
+<script type="text/javascript" src="js/popper.min.js"></script>
 
 <script src="./smooth_scrolling.js" async></script>
