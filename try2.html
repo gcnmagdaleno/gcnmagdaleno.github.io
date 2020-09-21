@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="apple-touch-icon" sizes="57x57" href="./favico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./favico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./favico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./favico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./favico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./favico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./favico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./favico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favico/favicon-16x16.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="manifest" href="./favico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./favico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio - Gian Carlo Nabor Magdaleno</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>TRY</title>
+    <style>
+         ::-webkit-scrollbar {
+            /* hides the scrollbar */
+            display: none;
+            scrollbar-width: none;
+            -ms-overflow-style: none
+        }
+        /*@import tag imports a font from google */
+        
+        @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+        body {
+            background-color: azure;
+        }
+        
+        .full-w {
+            /* makes the element's width a hundred percent */
+            width: 100%;
+        }
+        
+        .full-h {
+            /* makes the element's height a hundred percent */
+            height: 100vh;
+        }
+        /* wh90, w50, w75, h50, h75 are custom width and height value declarations */
+        
+        .wh90 {
+            width: 90%!important;
+            height: 90%!important;
+        }
+        
+        .w50 {
+            width: 50%;
+        }
+        
+        .w75 {
+            width: 75%;
+        }
+        
+        .h50 {
+            height: 40vh;
+        }
+        
+        .h75 {
+            height: 75%;
+        }
+        
+        .center {
+            /* places the items on the center */
+            display: grid;
+            place-items: center;
+        }
+        
+        .commands-input {
+            font-family: 'Indie Flower', cursive;
+            border: none;
+            outline: none;
+            transition: 1s ease-in-out;
+            width: 50%;
+            font: 25px;
+        }
+        
+        .commands-input:focus,
+        .commands-input:hover {
+            box-shadow: 0px 0px 9px 9px cadetblue;
+            transition: 2s ease;
+            width: 75%;
+            font: 30px;
+        }
+        
+        #resume {
+            /* resume modal */
+            position: fixed;
+            z-index: 5;
+            left: 5%;
+            top: 5;
+            width: 55%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(69, 90, 100, 1)!important;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            box-shadow: 9px 15px 19px 0px #212121;
+            transition: .5s ease;
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s;
+            display: inline-block;
+        }
+        
+        @-webkit-keyframes animatetop {
+            /* animation when the modal opens */
+            from {
+                top: -300px;
+                opacity: 0
+            }
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+        
+        @keyframes animatetop {
+            /* animation when the modal opens */
+            from {
+                top: -300px;
+                opacity: 0
+            }
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+        
+        .close {
+            /* aligns the close button to the right place */
+            margin-left: -800px!important;
+        }
+        
+        .modals {
+            /* this do not display the modals at the start */
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <center class="modals p-5 full-w">
+        <div><span class="btn close
+                    text-white text-right m-5
+                    p-5 sticky-top">close</span></div>
+        <div class="wh90" id="resume">
+
+
+
+
+            <br><br>
+            <b class="_links display-4 center text-white">
+                    RESUME
+                    <br>
+                    <a href="gian_cv_with_pic.pdf" download>
+                        <b style="padding:10px" class="link_items h3">(DOWNLOAD
+                            MY
+                            RESUME)</b> </a>
+            <!-- <div class="include-resume p-5 full-w full-h  rounded show
+                        embed-responsive-item embed-responsive
+                        "></div> -->
+            <br>
+
+            <iframe class="h75 full-w rounded show" src="cv.html" style="border-width:0;" allowfullscreen> </iframe>
+            </b>
+            <br> <br>
+        </div>
+    </center>
+
+    <center class="">
+
+        <div class="command-container full-w p-5">
+            <input type="text" placeholder="enter a command and press enter" class="commands-input w75 h50 rounded-pill bg-dark
+                    p-2
+                    text-white
+                    h1 text-center">
+
+            <div class="commands mt-1 p-5 mb-n5">
+                <label for="commands" class="commands-label
+                        font-weight-bolder h1 mb-n5">List of
+                        commands available:</label><br>
+                <!-- <p class="commands h5"><b class="h1 mr-5">-v port</b> * [Enter this command if you want to see my portfolio]</p>
+                <p class="commands h5"><b class="h1 mr-5">contact --d</b> * [Enter this command if you want to see my portfolio]</p>
+                <p class="commands h5"><b class="h1 mr-5">-g top</b> * [go to the top of the page]</p> -->
+                <div class="d-flex">
+                    <div class="p-2 flex-grow-1"> <br></div>
+
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <b class="commands h1
+                                mr-5">-v
+                                resm</b>
+                    </div>
+                    <div class="col">
+                        <i class="commands
+                                h5">[Enter this command if you want to see my
+                                resume]</i>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <b class="commands h1
+                                mr-5">-g
+                                top</b>
+                    </div>
+                    <div class="col">
+                        <i class="commands
+                                h5">[go to the top of the page]</i>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <b class="commands h1
+                                mr-5">-g
+                                bot</b>
+                    </div>
+                    <div class="col">
+                        <i class="commands
+                                h5">[go to the bottom of the page]</i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </center>
+
+</body>
+
+</html>
+<!-- <script src="./cursor.js" async></script> -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="./smooth_scrolling.js" async></script>
+<script>
+    //declarations
+    let commandsSelector = $('.commands-input');
+    let commandContainer = document.querySelector('.command-container');
+    let resumeSelector = document.querySelector('#resume');
+    let resumeCloseBtn = document.querySelector('span.close');
+
+    //function that executes the given command by the user
+    function executeCommand(commandsGiven) {
+        if (commandsGiven.match(/-v resm/)) {
+            console.log('command: view resume\n')
+            openResume();
+        } else if (commandsGiven.match(/-g top/)) {
+            console.log('command: go to the top');
+        } else if (commandsGiven.match(/-g bot/)) {
+            console.log('command: go to the bottom');
+        } else {
+            commandsSelector.val('oops.. wrong command');
+        }
+    }
+
+    //open function for the modal resume
+    function openResume() {
+        document.querySelector('.modals').style.display = 'block';
+        commandContainer.style.display = 'none';
+        resumeCloseBtn.style.display = 'block';
+        resumeSelector.style.display = 'block';
+    }
+
+    //function that closes the modal
+    function close() {
+        document.querySelector('.modals').style.display = 'none';
+        resumeCloseBtn.style.display = 'none';
+        resumeSelector.style.display = 'none';
+        commandContainer.style.display = 'block';
+    }
+
+    //fetch whatever the user input command and executes it after enter key is presssed
+    $(commandsSelector).keyup(function(e) {
+        if (e.which == 13) {
+            executeCommand(commandsSelector.val());
+        }
+    });
+
+    //close the modal when user pressed escape on the keyboard
+    $('html').keyup(function(e) {
+        if (e.keyCode == 27) {
+            close();
+        }
+    });
+
+    //close the modal when user clicks outside of the modal
+    window.onclick = function(event) {
+        if (event.target !== resumeSelector) {
+            close();
+        }
+    }
+
+    //closes the modal when close button is clicked
+    resumeCloseBtn.onclick = function() {
+        close();
+    }
+</script>

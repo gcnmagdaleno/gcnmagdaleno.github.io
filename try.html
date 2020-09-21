@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="apple-touch-icon" sizes="57x57" href="./favico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./favico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./favico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./favico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./favico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./favico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./favico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./favico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favico/favicon-16x16.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="manifest" href="./favico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./favico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio - Gian Carlo Nabor Magdaleno</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>TRY</title>
+    <style>
+        * {
+            transition: 1s ease-in-out;
+            -webkit-animation-name: fadeInUp;
+            -webkit-animation-duration: 1s;
+            animation-name: fadeInUp;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+            -webkit-animation-timing-function: ease-in-out;
+        }
+        
+         ::-webkit-scrollbar {
+            /* hides the scrollbar */
+            display: none;
+            scrollbar-width: none;
+            -ms-overflow-style: none
+        }
+        /*@import tag imports a font from google */
+        
+        @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+        body {
+            background-color: azure;
+        }
+        
+        .full-w {
+            /* makes the element's width a hundred percent */
+            width: 100%;
+        }
+        
+        .full-h {
+            /* makes the element's height a hundred percent */
+            height: 100vh;
+        }
+        /* wh90, w50, w75, h50, h75 are custom width and height value declarations */
+        
+        .wh90 {
+            width: 90%!important;
+            height: 89vh!important;
+        }
+        
+        .w50 {
+            width: 50%;
+        }
+        
+        .w75 {
+            width: 75%;
+        }
+        
+        .h50 {
+            height: 40vh;
+        }
+        
+        .h75 {
+            height: 75%;
+        }
+        
+        .center {
+            /* places the items on the center */
+            display: grid;
+            place-items: center;
+        }
+        
+        .commands-input {
+            font-family: 'Indie Flower', cursive;
+            border: none;
+            outline: none;
+            transition: 1s ease-in-out;
+            width: 100%;
+            font-size: 55px;
+            font-weight: bolder;
+        }
+        
+        .terminal {
+            text-align: left;
+            background-color: mediumseagreen;
+            display: none;
+        }
+        
+        .commandUser,
+        .commandSystem {
+            font-size: 30px!important;
+            text-align: left!important;
+            color: beige;
+            float: left!important;
+        }
+        
+        .fileName {
+            text-align: left!important;
+            ;
+            float: left!important;
+            color: mediumturquoise;
+            font-size: 35px;
+        }
+        /* .terminal:hover,
+        .terminal:focus {
+            width: 35%;
+            text-align: left;
+            background-color: mediumseagreen;
+            box-shadow: 0px 0px 9px 9px cadetblue;
+            transition: 2s ease;
+        } */
+        
+        #resume {
+            /* resume modal */
+            position: fixed;
+            z-index: 5;
+            left: 5%;
+            top: 5;
+            width: 55%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(69, 90, 100, 1)!important;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            box-shadow: 9px 15px 19px 0px #212121;
+            transition: 1.5s ease!important;
+            -webkit-animation-name: animatetop!important;
+            -webkit-animation-duration: 1.5s!important;
+            animation-name: animatetop!important;
+            animation-duration: 1.5s!important;
+            animation-timing-function: ease-in-out!important;
+            -webkit-animation-timing-function: ease-in-out!important;
+            display: inline-block!important;
+        }
+        
+        .hide {
+            display: none;
+        }
+        
+        #loading,
+        .loading {
+            /* loading modal */
+            /* position: fixed; */
+            z-index: 30!important;
+            left: 0;
+            top: 0;
+            width: 100%!important;
+            height: 100vh!important;
+            opacity: 1;
+            transition: 1000 ease-in-out!important;
+            /* background-color: azure!important; */
+            -webkit-animation-name: fadeInUp;
+            -webkit-animation-duration: 3.5s;
+            animation-timing-function: ease-in-out;
+            -webkit-animation-timing-function: ease-in-out;
+            animation-name: fadeInUp;
+            animation-duration: 3.5s;
+            display: none;
+            text-align: center!important;
+            font-size: 10vw;
+        }
+        
+        .loading label {
+            font-size: 4vw;
+            /* margin-top: 50vh; */
+            width: 100%;
+            height: 80%;
+            overflow: auto;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            opacity: 1;
+            transition: 6s ease-in-out!important;
+            /* background-color: azure!important; */
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 1.5s;
+            animation-name: animatetop;
+            animation-duration: 1.5s;
+        }
+        
+        .loading h5 {
+            margin-top: 300px!important;
+        }
+        
+        @-webkit-keyframes animatetop {
+            /* animation when the modal opens */
+            from {
+                top: -500px;
+                opacity: 0
+            }
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+        
+        @keyframes animatetop {
+            /* animation when the modal opens */
+            from {
+                top: -500px;
+                opacity: 0;
+                animation-timing-function: ease-in-out;
+                -webkit-animation-timing-function: ease-in-out;
+            }
+            to {
+                top: 0;
+                opacity: 1;
+                animation-timing-function: ease-in-out;
+                -webkit-animation-timing-function: ease-in-out;
+            }
+        }
+        
+        .fadein {
+            -webkit-animation: fadeInUp 500ms ease-in-out;
+            /* Chrome, Safari, Opera */
+            animation: fadeInUp 500ms ease-in-out;
+            animation-timing-function: ease-in-out;
+            -webkit-animation-timing-function: ease-in-out;
+        }
+        /* Chrome, Safari, Opera */
+        
+        @-webkit-keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                animation-timing-function: ease-in-out;
+                -webkit-animation-timing-function: ease-in-out;
+            }
+            100% {
+                opacity: 1;
+                animation-timing-function: ease-in-out;
+                -webkit-animation-timing-function: ease-in-out;
+            }
+        }
+        /* Standard syntax */
+        
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                animation-timing-function: ease-in-out;
+                -webkit-animation-timing-function: ease-in-out;
+            }
+            100% {
+                opacity: 1;
+                animation-timing-function: ease-in-out;
+                -webkit-animation-timing-function: ease-in-out;
+            }
+        }
+        
+        .close {
+            /* aligns the close button to the right place */
+            margin-right: 60px!important;
+            margin-top: -10px!important;
+            padding: 20px!important;
+            margin: 20px!important;
+        }
+        
+        .modals,
+        iframe {
+            /* this do not display the modals at the start */
+            display: none;
+            z-index: 26;
+        }
+        /* .terminal {
+            overflow-y: scroll;
+        } */
+        
+        .terminal h1 {
+            background-color: mediumseagreen;
+            z-index: 6;
+            width: 100%;
+            overflow-y: scroll;
+        }
+        
+        pre {
+            overflow-y: scroll;
+            white-space: pre-wrap;
+        }
+        
+        @media (max-width: 675px) {
+            .commands-input {
+                /* background-color: green!important; */
+                font-size: 40px;
+            }
+            .close {
+                margin-top: -20px!important;
+                margin-right: -40px!important;
+            }
+            iframe {
+                display: none!important;
+            }
+            #resume {
+                height: 55%!important;
+            }
+            .commandUser,
+            .commandSystem {
+                font-size: 20px!important;
+                text-align: left!important;
+                color: beige;
+                float: left!important;
+            }
+            .fileName {
+                text-align: left!important;
+                ;
+                float: left!important;
+                color: mediumturquoise;
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-dark">
+    <kbd class="loading full-w full-h text-white bg-dark" onmousedown="detectMouseClick(event)" id="loading text-center ">
+        <label for="loading"> gcnmagdaleno.cli<br>version 1.0.
+        
+        </label><h5>click anywhere to start</h5>
+        <!-- <img class="" width="1000px" height="1000px" src="./slow.jpg" style="z-index: -100;"> -->
+
+    </kbd>
+    <div class="hide modals p-5 full-h full-w bg-dark ">
+        <center class="">
+            <div><span class="btn close text-white text-right m-5 p-5 sticky-top ">close</span></div>
+
+
+            <div class="wh90 " id="resume ">
+
+
+
+
+                <br><br>
+                <b class="_links display-4 center text-white ">
+                RESUME
+                <br>
+                <a href="gian_cv_with_pic.pdf " download>
+                    <b style="padding:10px " class="link_items h3 ">(DOWNLOAD
+                        MY
+                        RESUME)</b> </a>
+                <!-- <div class="include-resume p-5 full-w full-h rounded show embed-responsive-item embed-responsive "></div> -->
+                <br>
+                </b>
+                <iframe class="h75 full-w rounded show " src="cv.html " style="border-width:0; " allowfullscreen> </iframe>
+
+                <br> <br>
+            </div>
+        </center>
+
+    </div>
+
+    <center class="bg-dark ">
+
+        <div class="terminal bg-dark text-white p-2 full-w sticky-top " id="terminal">
+            <label class="fileName sticky-top bg-dark full-w " id="fileName ">Porfolio > Gian Carlo Magdaleno</label>
+            <pre class="bg-dark text-white p-2 full-w h4 " id="pre "><label id="commandSystem " class="commandSystem ">List of available commands<br>-v resm *this command lets you view my resume*<br><label id="commandUser " class="commandUser text-right ">User Commands</label>
+            </label><br><br><br><br><br><br>
+       
+    
+                </pre>
+            <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+            <div class="d-flex bg-dark ">
+                <b class="d-flex display-1 fixed-bottom pl-3 pr-3 bg-dark ">><input type="text " name="commands-input " class="commands-input bg-dark d-flex flex-grow-1 pl-4 pb-2 text-white fixed-bottoms " id="commands-input " placeholder="enter command "></b>
+            </div>
+        </div>
+
+
+    </center>
+
+
+</body>
+
+</html>
+<!-- <script src="./cursor.js " async></script> -->
+<script type="text/javascript " src="js/popper.min.js "></script>
+<script type="text/javascript " src="js/jquery.js "></script>
+<script type="text/javascript " src="js/bootstrap.min.js "></script>
+<script src="./smooth_scrolling.js " async></script>
+<script>
+    //code here using lines[i] which will give you each line
+    console.log('lines:\n' + $('#pre').text().split('\n').length);
+
+    function detectMouseClick() {
+        console.log("You pressed mouse button: " + event.button)
+        $('#loading,.loading').hide();
+        $('.hide').show();
+        $('.modals').show();
+        $('.terminal').show();
+
+    }
+
+
+    $(window).on('load', function() {
+        setTimeout(function() {
+            $('#loading,.loading').show();
+            let getCommandSystem = document.querySelector('.commandSystem');
+            getCommandSystem.style.color = 'rgb(200,200,200)';
+
+        }, 1500);
+    });
+
+    console.log(localStorage.getItem('firstTime'));
+    if (localStorage.getItem('firstTime') === null || localStorage.getItem('firstTime') === 'yes') {
+        // alert('your first time visiting this site');
+        localStorage.setItem('firstTime', 'no');
+        console.log(localStorage.getItem('firstTime'));
+    } else if (localStorage.getItem('firstTime') === 'no') {
+        // alert('not your first time visiting this site');
+        console.log(localStorage.getItem('firstTime'));
+    }
+
+
+
+    //declarations
+
+    let commandsSelector = $('.commands-input');
+    let commandContainer = document.querySelector('#terminal');
+    let resumeSelector = document.querySelector('#resume');
+    let resumeCloseBtn = document.querySelector('span.close');
+    let commandHistory = $('.terminal pre');
+
+    commandsSelector.focus();
+
+    //function that executes the given command by the user
+    function executeCommand(commandsGiven) {
+        if (commandsGiven.match(/-v resm/)) {
+            console.log('command: view resume\n')
+            commandHistory.text(commandHistory.text() + '\n> ' + commandsSelector.val() + '\ncommand: view resume');
+            openResume();
+        } else if (commandsGiven.match(/-g top/)) {
+            console.log('command: go to the top');
+        } else if (commandsGiven.match(/-g bot/)) {
+            console.log('command: go to the bottom');
+        } else {
+            commandsSelector.val('oops.. wrong command');
+        }
+    }
+
+    //open function for the modal resume
+    function openResume() {
+        document.querySelector('.modals').style.display = 'block';
+        document.querySelector('iframe').style.display = 'block';
+        commandContainer.style.display = 'none';
+        resumeCloseBtn.style.display = 'block';
+        // resumeSelector.style.transition = '.5s ease-in-out';
+        resumeSelector.style.display = 'block';
+
+    }
+
+    //function that closes the modal
+    function close() {
+
+        document.querySelector('#terminal').style.display = 'block';
+        commandsSelector.focus();
+        document.querySelector('.hide').style.display = 'none';
+        resumeCloseBtn.style.display = 'none';
+        resumeSelector.style.display = 'none';
+
+
+
+
+        if (parseFloat($('#pre').text().split('\n').length) >= parseFloat(14)) {
+            commandHistory.text('');
+        }
+    }
+
+    //fetch whatever the user input command and executes it after enter key is presssed
+    $(commandsSelector).keyup(function(e) {
+        if (e.which == 13) {
+            if (commandHistory.text().match(/List/)) {
+                commandHistory.text('');
+                executeCommand(commandsSelector.val());
+            } else {
+                executeCommand(commandsSelector.val());
+            }
+
+        }
+    });
+
+    //close the modal when user pressed escape on the keyboard
+    $('html').keyup(function(e) {
+        if (e.keyCode == 27) {
+            close();
+        }
+    });
+
+    //close the modal when user clicks outside of the modal
+    window.onclick = function(event) {
+        if (event.target !== resumeSelector) {
+            close();
+        }
+    }
+
+    //closes the modal when close button is clicked
+    resumeCloseBtn.onclick = function() {
+        close();
+    }
+</script>
