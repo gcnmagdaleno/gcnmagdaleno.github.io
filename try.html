@@ -34,6 +34,11 @@
             animation-duration: 1s;
             animation-timing-function: ease-in-out;
             -webkit-animation-timing-function: ease-in-out;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
         
          ::-webkit-scrollbar {
@@ -93,30 +98,42 @@
             outline: none;
             transition: 1s ease-in-out;
             width: 100%;
-            font-size: 55px;
+            font-size: 5vw;
             font-weight: bolder;
         }
         
         .terminal {
+            font-size: 1vw!important;
             text-align: left;
             background-color: mediumseagreen;
             display: none;
         }
         
+        .terminal div b {
+            font-size: 5vw;
+        }
+        
         .commandUser,
         .commandSystem {
-            font-size: 30px!important;
+            font-size: 1vw!important;
             text-align: left!important;
+            /* float: left!important; */
+        }
+        
+        .commandSystem {
+            color: azure;
+        }
+        
+        .commandUser {
             color: beige;
-            float: left!important;
         }
         
         .fileName {
             text-align: left!important;
             ;
             float: left!important;
-            color: mediumturquoise;
-            font-size: 35px;
+            color: #48d1cc;
+            font-size: 6vw;
         }
         /* .terminal:hover,
         .terminal:focus {
@@ -127,7 +144,8 @@
             transition: 2s ease;
         } */
         
-        #resume {
+        #resume,
+        #portfolio {
             /* resume modal */
             position: fixed;
             z-index: 5;
@@ -139,11 +157,11 @@
             background-color: rgba(69, 90, 100, 1)!important;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             box-shadow: 9px 15px 19px 0px #212121;
-            transition: 1.5s ease!important;
+            transition: 2s ease!important;
             -webkit-animation-name: animatetop!important;
-            -webkit-animation-duration: 1.5s!important;
+            -webkit-animation-duration: 2s!important;
             animation-name: animatetop!important;
-            animation-duration: 1.5s!important;
+            animation-duration: 2s!important;
             animation-timing-function: ease-in-out!important;
             -webkit-animation-timing-function: ease-in-out!important;
             display: inline-block!important;
@@ -172,12 +190,12 @@
             animation-name: fadeInUp;
             animation-duration: 3.5s;
             display: none;
-            text-align: center!important;
+            text-align: left!important;
             font-size: 10vw;
         }
         
         .loading label {
-            font-size: 4vw;
+            font-size: 1vw;
             /* margin-top: 50vh; */
             width: 100%;
             height: 80%;
@@ -198,7 +216,15 @@
         }
         
         .loading h5 {
-            margin-top: 300px!important;
+            width: 100%;
+            height: 50%;
+            overflow: auto;
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            bottom: 0;
+            right: 0;
         }
         
         @-webkit-keyframes animatetop {
@@ -266,9 +292,9 @@
         }
         
         .close {
-            /* aligns the close button to the right place */
-            margin-right: 60px!important;
-            margin-top: -10px!important;
+            /* aligns the close button to the right */
+            margin-right: 50px!important;
+            margin-top: -20px!important;
             padding: 20px!important;
             margin: 20px!important;
         }
@@ -296,8 +322,17 @@
         }
         
         @media (max-width: 675px) {
+            iframe {
+                display: none!important;
+            }
+            #resume {
+                height: 55%!important;
+            }
+        }
+        /*
+        @media (max-width: 675px) {
             .commands-input {
-                /* background-color: green!important; */
+                background-color: green!important; 
                 font-size: 40px;
             }
             .close {
@@ -325,12 +360,17 @@
                 font-size: 25px;
             }
         }
+        */
+        
+        .commandSeparator {
+            line-height: 2px;
+        }
     </style>
 </head>
 
 <body class="bg-dark">
     <kbd class="loading full-w full-h text-white bg-dark" onmousedown="detectMouseClick(event)" id="loading text-center ">
-        <label for="loading"> gcnmagdaleno.cli<br>version 1.0.
+        <label for="loading"> gcnmagdaleno.cli<br>version 1.0
         
         </label><h5>click anywhere to start</h5>
         <!-- <img class="" width="1000px" height="1000px" src="./slow.jpg" style="z-index: -100;"> -->
@@ -341,7 +381,7 @@
             <div><span class="btn close text-white text-right m-5 p-5 sticky-top ">close</span></div>
 
 
-            <div class="wh90 " id="resume ">
+            <div class="wh90 resume" id="resume">
 
 
 
@@ -357,7 +397,60 @@
                 <!-- <div class="include-resume p-5 full-w full-h rounded show embed-responsive-item embed-responsive "></div> -->
                 <br>
                 </b>
-                <iframe class="h75 full-w rounded show " src="cv.html " style="border-width:0; " allowfullscreen> </iframe>
+                <iframe class="wh90 full-w rounded show " src="cv.html " style="border-width:0; " allowfullscreen> </iframe>
+
+                <br> <br>
+            </div>
+
+
+            <div class="wh90 portfolio" id="portfolio">
+
+
+
+
+                <br><br>
+
+                <b class="_links h1 text-weight-bolder mb-n5"> PORTFOLIO
+                </b>
+
+                <div class="p-5 mt-n5">
+                    <div class="p-5">
+                        <a class="link_items text-dark h2 font-weight-bolder" href=./moneyloan/index.html target=_blank>
+
+                            <img loading="lazy" class="img_projects w-50" src="./moneyloan/ml.png">
+                            <br>Project #1
+
+                        </a>
+                    </div>
+                    <div class="p-5">
+                        <a class="link_items text-dark h2 font-weight-bolder" href=./ictd/index.html target=_blank>
+
+                            <img loading="lazy" class="img_projects w-50" src=ictd/ictd.png>
+                            <br>Project #2
+
+                        </a>
+                    </div>
+                    <div class="p-5">
+                        <a class="link_items text-dark h2 font-weight-bolder" href=barangay/index.html target=_blank>
+
+                            <img loading="lazy" class="img_projects w-50" src="./barangay/br.webp">
+                            <br>Project #3
+
+                        </a>
+                    </div>
+                    <div class="p-5">
+                        <a class="link_items text-dark h2 font-weight-bolder" href=jec/index.html target=_blank>
+                            <img loading="lazy" class="img_projects img-fluid w-50 jec" src="./jec/jec1_pixel_really_blue_portrait.webp">
+                            <br>Project #4
+
+                        </a>
+                    </div>
+                    <!-- 
+                    <div class="sixth-page h-100 pt-5 pb-5">
+
+                    </div> -->
+                    <!-- </div> -->
+                </div>
 
                 <br> <br>
             </div>
@@ -369,14 +462,10 @@
 
         <div class="terminal bg-dark text-white p-2 full-w sticky-top " id="terminal">
             <label class="fileName sticky-top bg-dark full-w " id="fileName ">Porfolio > Gian Carlo Magdaleno</label>
-            <pre class="bg-dark text-white p-2 full-w h4 " id="pre "><label id="commandSystem " class="commandSystem ">List of available commands<br>-v resm *this command lets you view my resume*<br><label id="commandUser " class="commandUser text-right ">User Commands</label>
-            </label><br><br><br><br><br><br>
-       
-    
-                </pre>
+            <pre class="bg-dark text-white full-w h4 " id="pre "><label id="commandUser" class="commandUser text-right">User Commands</label><br class="commandSeparator"><label id="commandSystem" class="commandSystem mt-2">List of available commands<br>-v resm *this command lets you view my resume*<br>./cls *this one clears the screen*<br>NOTE: escape key can also be used when closing a modal. </label><br><br><br><br><br><br></pre>
             <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
             <div class="d-flex bg-dark ">
-                <b class="d-flex display-1 fixed-bottom pl-3 pr-3 bg-dark ">><input type="text " name="commands-input " class="commands-input bg-dark d-flex flex-grow-1 pl-4 pb-2 text-white fixed-bottoms " id="commands-input " placeholder="enter command "></b>
+                <b class="d-flex fixed-bottom pl-3 pr-3 bg-dark ">><input type="text " name="commands-input " class="commands-input bg-dark d-flex flex-grow-1 pl-4 pb-2 text-white fixed-bottoms " id="commands-input " placeholder="enter command "></b>
             </div>
         </div>
 
@@ -396,59 +485,93 @@
     //code here using lines[i] which will give you each line
     console.log('lines:\n' + $('#pre').text().split('\n').length);
 
-    function detectMouseClick() {
-        console.log("You pressed mouse button: " + event.button)
-        $('#loading,.loading').hide();
-        $('.hide').show();
-        $('.modals').show();
-        $('.terminal').show();
 
-    }
 
 
     $(window).on('load', function() {
         setTimeout(function() {
-            $('#loading,.loading').show();
-            let getCommandSystem = document.querySelector('.commandSystem');
-            getCommandSystem.style.color = 'rgb(200,200,200)';
+
+
+            console.log(localStorage.getItem('firstTime'));
+            if (localStorage.getItem('firstTime') === null || localStorage.getItem('firstTime') === 'yes') {
+                localStorage.setItem('firstTime', 'no');
+
+                function detectMouseClick() {
+                    console.log("You pressed mouse button: " + event.button)
+                    $('.terminal').show();
+                    $('#loading,.loading').hide();
+                    // $('.hide').show();
+                    // $('.modals').show();
+
+                }
+                $('#loading,.loading').show();
+                let getCommandSystem = document.querySelector('.commandSystem');
+                getCommandSystem.style.color = 'rgb(200,200,200)';
+            } else if (localStorage.getItem('firstTime') === 'no') {
+                // alert('not your first time visiting this site');
+                console.log(localStorage.getItem('firstTime'));
+                $('.terminal').show();
+                $('.commands-input').focus();
+            }
 
         }, 1500);
     });
 
-    console.log(localStorage.getItem('firstTime'));
-    if (localStorage.getItem('firstTime') === null || localStorage.getItem('firstTime') === 'yes') {
-        // alert('your first time visiting this site');
-        localStorage.setItem('firstTime', 'no');
-        console.log(localStorage.getItem('firstTime'));
-    } else if (localStorage.getItem('firstTime') === 'no') {
-        // alert('not your first time visiting this site');
-        console.log(localStorage.getItem('firstTime'));
-    }
+
 
 
 
     //declarations
 
-    let commandsSelector = $('.commands-input');
+    let commandsInput = $('.commands-input');
     let commandContainer = document.querySelector('#terminal');
     let resumeSelector = document.querySelector('#resume');
-    let resumeCloseBtn = document.querySelector('span.close');
-    let commandHistory = $('.terminal pre');
+    let closeBtn = document.querySelector('span.close');
+    let portfolioSelector = document.querySelector('#portfolio');
+    let commandsHistory = $('.terminal pre');
+    let commandsSystem = $('.terminal #commandSystem');
+    let commandUser = $('.terminal #commandUser');
 
-    commandsSelector.focus();
+    commandsInput.focus();
 
     //function that executes the given command by the user
     function executeCommand(commandsGiven) {
         if (commandsGiven.match(/-v resm/)) {
-            console.log('command: view resume\n')
-            commandHistory.text(commandHistory.text() + '\n> ' + commandsSelector.val() + '\ncommand: view resume');
+            console.log('command: view resume\n');
+            // if (commandsSystem.text().trim() === null || commandsSystem.text().trim() === '') {
+            console.log('null');
+            commandUser.text('> ' + commandsInput.val().trim());
+            commandsSystem.text('command: view resume'.trim());
+            // } else {
+            //     console.log('not null');
+
+            //     console.log(commandsSystem.text().trim());
+            //     commandUser.text('\n> ' + commandsInput.val().trim() + '\n');
+            //     commandsSystem.text('\n \bcommand: view resume'.trim());
+            // }
+
+            console.log($(commandUser).text());
             openResume();
-        } else if (commandsGiven.match(/-g top/)) {
-            console.log('command: go to the top');
+        } else if (commandsGiven.match(/-v prtf/)) {
+            console.log('command: view portfolio\n');
+            // if (commandsSystem.text().trim() === null || commandsSystem.text().trim() === '') {
+            console.log('null');
+            commandUser.text('> ' + commandsInput.val().trim());
+            commandsSystem.text('command: view portfolio'.trim());
+            // } else {
+            //     console.log('not null');
+
+            //     console.log(commandsSystem.text().trim());
+            //     commandUser.text('\n> ' + commandsInput.val().trim() + '\n');
+            //     commandsSystem.text('\n \bcommand: view resume'.trim());
+            // }
+
+            console.log($(commandUser).text());
+            openPortfolio();
         } else if (commandsGiven.match(/-g bot/)) {
             console.log('command: go to the bottom');
         } else {
-            commandsSelector.val('oops.. wrong command');
+            commandsInput.val('oops.. wrong command');
         }
     }
 
@@ -457,9 +580,20 @@
         document.querySelector('.modals').style.display = 'block';
         document.querySelector('iframe').style.display = 'block';
         commandContainer.style.display = 'none';
-        resumeCloseBtn.style.display = 'block';
-        // resumeSelector.style.transition = '.5s ease-in-out';
+        closeBtn.style.display = 'block';
+        resumeSelector.style.transition = '.5s ease-in-out';
         resumeSelector.style.display = 'block';
+
+    }
+
+    function openPortfolio() {
+        document.querySelector('.modals').style.display = 'block';
+        document.querySelector('iframe').style.display = 'block';
+        commandContainer.style.display = 'none';
+        closeBtn.style.display = 'block';
+        portfolioSelector.style.transition = '.5s ease-in-out';
+        portfolioSelector.style.display = 'block';
+
 
     }
 
@@ -467,33 +601,34 @@
     function close() {
 
         document.querySelector('#terminal').style.display = 'block';
-        commandsSelector.focus();
+        commandsInput.focus();
         document.querySelector('.hide').style.display = 'none';
-        resumeCloseBtn.style.display = 'none';
+        closeBtn.style.display = 'none';
         resumeSelector.style.display = 'none';
+        portfolioSelector.style.display = 'none';
 
 
 
 
         if (parseFloat($('#pre').text().split('\n').length) >= parseFloat(14)) {
-            commandHistory.text('');
+            commandsSystem.text('');
         }
     }
 
     //fetch whatever the user input command and executes it after enter key is presssed
-    $(commandsSelector).keyup(function(e) {
+    $(commandsInput).keyup(function(e) {
         if (e.which == 13) {
-            if (commandHistory.text().match(/List/)) {
-                commandHistory.text('');
-                executeCommand(commandsSelector.val());
+            if (commandsSystem.text().match(/List/)) {
+                commandsSystem.text('');
+                executeCommand(commandsInput.val());
             } else {
-                executeCommand(commandsSelector.val());
+                executeCommand(commandsInput.val());
             }
 
         }
     });
 
-    //close the modal when user pressed escape on the keyboard
+    // close the modal when user pressed escape on the keyboard
     $('html').keyup(function(e) {
         if (e.keyCode == 27) {
             close();
@@ -502,13 +637,13 @@
 
     //close the modal when user clicks outside of the modal
     window.onclick = function(event) {
-        if (event.target !== resumeSelector) {
+        if (event.target == resumeSelector) {
             close();
         }
     }
 
     //closes the modal when close button is clicked
-    resumeCloseBtn.onclick = function() {
+    closeBtn.onclick = function() {
         close();
     }
 </script>
