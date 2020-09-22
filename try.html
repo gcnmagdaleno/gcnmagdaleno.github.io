@@ -191,7 +191,6 @@
             animation-duration: 3.5s;
             display: none;
             text-align: left!important;
-            font-size: 10vw;
         }
         
         .loading label {
@@ -213,6 +212,7 @@
             -webkit-animation-duration: 1.5s;
             animation-name: animatetop;
             animation-duration: 1.5s;
+            font-size: 2rem;
         }
         
         .loading h5 {
@@ -225,6 +225,7 @@
             left: 0;
             bottom: 0;
             right: 0;
+            text-align: center!important;
         }
         
         @-webkit-keyframes animatetop {
@@ -369,10 +370,10 @@
 </head>
 
 <body class="bg-dark">
-    <kbd class="loading full-w full-h text-white bg-dark" onmousedown="detectMouseClick(event)" id="loading text-center ">
-        <label for="loading"> gcnmagdaleno.cli<br>version 1.0
+    <kbd class="loading full-w full-h text-white bg-dark p-5 m-5" onmousedown="detectMouseClick(event)" id="loading text-center ">
+        <label for="loading" class="p-5 m-5"> gcnmagdaleno.cli<br>version 1.0
         
-        </label><h5>click anywhere to start</h5>
+        </label><h5 class="p-5 m-5">click anywhere to start</h5>
         <!-- <img class="" width="1000px" height="1000px" src="./slow.jpg" style="z-index: -100;"> -->
 
     </kbd>
