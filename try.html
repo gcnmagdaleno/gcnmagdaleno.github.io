@@ -26,7 +26,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <title>TRY</title>
     <style>
-        * {
+        *,
+         :root {
             transition: 1s ease-in-out;
             -webkit-animation-name: fadeInUp;
             -webkit-animation-duration: 1s;
@@ -39,19 +40,33 @@
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+            cursor: none!important;
         }
         
          ::-webkit-scrollbar {
             /* hides the scrollbar */
-            display: none;
-            scrollbar-width: none;
-            -ms-overflow-style: none
+            display: none!important;
+            scrollbar-width: none!important;
+            -ms-overflow-style: none!important;
+            overflow: hidden
         }
         /*@import tag imports a font from google */
         
         @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
         body {
             background-color: azure;
+        }
+        
+        .cursor {
+            /* custom mouse cursor */
+            transform: translate(-5%, -5%);
+            pointer-events: none;
+            /* transition: .5 ease; */
+            position: absolute;
+            transition: height .3s cubic-bezier(0.46, 0.03, 0.52, 0.96), width .3s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+            z-index: 5000;
+            position: fixed;
+            display: none;
         }
         
         .full-w {
@@ -103,10 +118,12 @@
         }
         
         .terminal {
-            font-size: 1vw!important;
+            font-size: 1rem!important;
             text-align: left;
-            background-color: mediumseagreen;
+            /* background-color: mediumseagreen; */
             display: none;
+            overflow: hidden;
+            position: fixed;
         }
         
         .terminal div b {
@@ -115,13 +132,15 @@
         
         .commandUser,
         .commandSystem {
-            font-size: 1vw!important;
+            font-size: 1rem!important;
             text-align: left!important;
             /* float: left!important; */
+            display: none;
         }
         
         .commandSystem {
             color: azure;
+            height: 50vh;
         }
         
         .commandUser {
@@ -134,6 +153,8 @@
             float: left!important;
             color: #48d1cc;
             font-size: 6vw;
+            /* position: fixed; */
+            overflow: hidden;
         }
         /* .terminal:hover,
         .terminal:focus {
@@ -309,17 +330,19 @@
         /* .terminal {
             overflow-y: scroll;
         } */
-        
-        .terminal h1 {
+        /* .terminal h1 {
             background-color: mediumseagreen;
             z-index: 6;
             width: 100%;
             overflow-y: scroll;
-        }
+        } */
         
-        pre {
-            overflow-y: scroll;
+        pre,
+        #pre {
+            overflow-y: hidden;
             white-space: pre-wrap;
+            height: 50vh;
+            /* background-color: mediumturquoise!important; */
         }
         
         @media (max-width: 675px) {
@@ -328,6 +351,9 @@
             }
             #resume {
                 height: 55%!important;
+            }
+            .cursor {
+                display: none;
             }
         }
         /*
@@ -370,14 +396,15 @@
 </head>
 
 <body class="bg-dark">
-    <kbd class="loading full-w full-h text-white bg-dark p-5 m-5" onmousedown="detectMouseClick(event)" id="loading text-center ">
+    <img class="cursor" loading="eager" src="./cursor1.png" width="50" height="50" alt="cursor">
+    <kbd class="loading full-w full-h text-white bg-dark p-5 m-5" id="loading text-center " onmousedown="detectMouseClick(event)">
         <label for="loading" class="p-5 m-5"> gcnmagdaleno.cli<br>version 1.0
         
         </label><h5 class="p-5 m-5">click anywhere to start</h5>
         <!-- <img class="" width="1000px" height="1000px" src="./slow.jpg" style="z-index: -100;"> -->
 
     </kbd>
-    <div class="hide modals p-5 full-h full-w bg-dark ">
+    <div class=" modals p-5 full-h full-w bg-dark ">
         <center class="">
             <div><span class="btn close text-white text-right m-5 p-5 sticky-top ">close</span></div>
 
@@ -458,10 +485,9 @@
         </center>
 
     </div>
+    <center class="bg-dark hide">
 
-    <center class="bg-dark ">
-
-        <div class="terminal bg-dark text-white p-2 full-w sticky-top " id="terminal">
+        <div class="terminal bg-dark text-white p-2 full-w  " id="terminal">
             <label class="fileName sticky-top bg-dark full-w " id="fileName ">Porfolio > Gian Carlo Magdaleno</label>
             <pre class="bg-dark text-white full-w h4 " id="pre "><label id="commandUser" class="commandUser text-right">User Commands</label><br class="commandSeparator"><label id="commandSystem" class="commandSystem mt-2">List of available commands<br>-v resm *this command lets you view my resume*<br>./cls *this one clears the screen*<br>NOTE: escape key can also be used when closing a modal. </label><br><br><br><br><br><br></pre>
             <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
@@ -474,10 +500,11 @@
     </center>
 
 
+
 </body>
 
 </html>
-<!-- <script src="./cursor.js " async></script> -->
+<script src="./cursor.js " async></script>
 <script type="text/javascript " src="js/popper.min.js "></script>
 <script type="text/javascript " src="js/jquery.js "></script>
 <script type="text/javascript " src="js/bootstrap.min.js "></script>
@@ -488,7 +515,15 @@
 
 
 
+    function detectMouseClick(event) {
+        console.log("You pressed mouse button: " + event.button);
+        $('.hide').show();
+        $('.terminal, #terminal, pre, .commandSystem,.commandUser').show();
+        $('#loading,.loading').hide();
 
+        // $('.modals').show();
+
+    }
     $(window).on('load', function() {
         setTimeout(function() {
 
@@ -496,22 +531,18 @@
             console.log(localStorage.getItem('firstTime'));
             if (localStorage.getItem('firstTime') === null || localStorage.getItem('firstTime') === 'yes') {
                 localStorage.setItem('firstTime', 'no');
-
-                function detectMouseClick() {
-                    console.log("You pressed mouse button: " + event.button)
-                    $('.terminal').show();
-                    $('#loading,.loading').hide();
-                    // $('.hide').show();
-                    // $('.modals').show();
-
-                }
                 $('#loading,.loading').show();
+
                 let getCommandSystem = document.querySelector('.commandSystem');
                 getCommandSystem.style.color = 'rgb(200,200,200)';
+
+
+
             } else if (localStorage.getItem('firstTime') === 'no') {
                 // alert('not your first time visiting this site');
                 console.log(localStorage.getItem('firstTime'));
-                $('.terminal').show();
+                $('.hide').show();
+                $('.terminal, #terminal, pre, .commandSystem,.commandUser').show();
                 $('.commands-input').focus();
             }
 
@@ -538,6 +569,7 @@
     //function that executes the given command by the user
     function executeCommand(commandsGiven) {
         if (commandsGiven.match(/-v resm/)) {
+            openResume();
             console.log('command: view resume\n');
             // if (commandsSystem.text().trim() === null || commandsSystem.text().trim() === '') {
             console.log('null');
@@ -552,7 +584,7 @@
             // }
 
             console.log($(commandUser).text());
-            openResume();
+
         } else if (commandsGiven.match(/-v prtf/)) {
             console.log('command: view portfolio\n');
             // if (commandsSystem.text().trim() === null || commandsSystem.text().trim() === '') {
@@ -578,22 +610,28 @@
 
     //open function for the modal resume
     function openResume() {
+        portfolioSelector.style.display = 'none';
+        resumeSelector.style.display = 'inline-block';
         document.querySelector('.modals').style.display = 'block';
         document.querySelector('iframe').style.display = 'block';
+
         commandContainer.style.display = 'none';
         closeBtn.style.display = 'block';
+
         resumeSelector.style.transition = '.5s ease-in-out';
-        resumeSelector.style.display = 'block';
+
+
 
     }
 
     function openPortfolio() {
         document.querySelector('.modals').style.display = 'block';
         document.querySelector('iframe').style.display = 'block';
+        resumeSelector.style.display = 'none';
         commandContainer.style.display = 'none';
         closeBtn.style.display = 'block';
         portfolioSelector.style.transition = '.5s ease-in-out';
-        portfolioSelector.style.display = 'block';
+        portfolioSelector.style.display = 'inline-block';
 
 
     }
@@ -603,7 +641,7 @@
 
         document.querySelector('#terminal').style.display = 'block';
         commandsInput.focus();
-        document.querySelector('.hide').style.display = 'none';
+        document.querySelector('.modals').style.display = 'none';
         closeBtn.style.display = 'none';
         resumeSelector.style.display = 'none';
         portfolioSelector.style.display = 'none';

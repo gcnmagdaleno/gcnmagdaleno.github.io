@@ -1,0 +1,170 @@
+*,
+:root {
+    transition: 0.25s ease-in-out;
+    -webkit-animation-name: fadeInUp;
+    -webkit-animation-duration: 0.25s;
+    animation-name: fadeInUp;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* cursor: none!important; */
+}
+
+.cursor {
+    /* custom mouse cursor */
+    transform: translate(-5%, -5%);
+    pointer-events: none;
+    /* transition: .5 ease; */
+    position: absolute;
+    transition: height 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.96), width 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+    z-index: 5000;
+    position: fixed;
+    display: none;
+}
+
+@-webkit-keyframes animatetop {
+    /* animation when the modal opens */
+    from {
+        top: -500px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes animatetop {
+    /* animation when the modal opens */
+    from {
+        top: -500px;
+        opacity: 0;
+        animation-timing-function: ease-in-out;
+        -webkit-animation-timing-function: ease-in-out;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+        animation-timing-function: ease-in-out;
+        -webkit-animation-timing-function: ease-in-out;
+    }
+}
+
+.fadein {
+    -webkit-animation: fadeInUp 500ms ease-in-out;
+    /* Chrome, Safari, Opera */
+    animation: fadeInUp 500ms ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+}
+
+.full-height {
+    height: 100vh !important;
+}
+
+.full-width {
+    width: 100vw !important;
+}
+
+.color-white {
+    color: #fdfff5 !important;
+}
+
+.color-black {
+    background-color: #242424 !important;
+}
+
+.bg-white {
+    background-color: #eaf4fc !important;
+}
+
+.bg-black {
+    background-color: #212121 !important;
+}
+
+.padding-1 {
+    padding: 1vw !important;
+}
+
+.padding-2 {
+    padding: 1.5vw !important;
+}
+
+.padding-3 {
+    padding: 2vw !important;
+}
+
+.padding-4 {
+    padding: 2.5vw !important;
+}
+
+.padding-5 {
+    padding: 3vw !important;
+}
+
+.font-1 {
+    font-size: 1rem;
+}
+
+.font-2 {
+    font-size: 1.25rem;
+}
+
+.font-3 {
+    font-size: 1.75rem;
+}
+
+.font-4 {
+    font-size: 2rem;
+}
+
+.font-5 {
+    font-size: 2.25rem;
+}
+
+.br-1 {
+    line-height: 0.5;
+}
+
+.br-1 {
+    line-height: 1.0;
+}
+
+.br-1 {
+    line-height: 1.5;
+}
+
+.center-1 {
+    position: absolute;
+    margin-top: 4.5vh;
+    margin-left: 4.5vw;
+    width: 90vw !important;
+    height: 100vh !important;
+    overflow: auto !important;
+    text-align: justify;
+}
+
+.center-2 {
+    position: absolute;
+    margin-top: 4vh;
+    margin-left: 4vw;
+    width: 90vw !important;
+    height: 100vh !important;
+    overflow: auto !important;
+    text-align: justify;
+}
+
+.center-3 {
+    position: absolute;
+    margin-top: 4.4vh;
+    margin-left: 4.4vw;
+    width: 90vw !important;
+    height: 100vh !important;
+    overflow: auto !important;
+    text-align: justify;
+}

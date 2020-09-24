@@ -1,0 +1,521 @@
+<script>
+    function conditionRedirect() {
+        if (screen.width > 768) {
+            window.location = "index.html"
+            document.write("Width: ".screen.width);
+        }
+    }
+
+    function redirect() {
+        setInterval(conditionRedirect, .0005);
+    }
+</script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="./favico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./favico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./favico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./favico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./favico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./favico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./favico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./favico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favico/favicon-16x16.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="manifest" href="./favico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./favico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio - Gian Carlo Nabor Magdaleno</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #363535;
+        }
+        
+        .wrapper {}
+        
+        .shadow {
+            -webkit-box-shadow: -1px -1px 69px -1px rgba(245, 226, 245, 1);
+            -moz-box-shadow: -1px -1px 69px -1px rgba(245, 226, 245, 1);
+            box-shadow: -1px -1px 69px -1px rgba(245, 226, 245, 1);
+        }
+        
+        .full-h {
+            height: 100vh;
+        }
+        
+        .full-w {
+            width: 100%;
+        }
+        
+        .center {
+            display: grid;
+            place-items: center;
+        }
+        
+         ::-webkit-scrollbar {
+            display: none;
+            scrollbar-width: none;
+            -ms-overflow-style: none
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Handlee&family=Neucha&family=Spartan:wght@900&display=swap');
+        #fab_button,
+        [src="up_arrow.webp"] {
+            border-radius: 1000px;
+            -webkit-border-radius: 1000px;
+            -moz-border-radius: 1000px;
+            width: 50px;
+            height: 50px;
+            float: right;
+            margin: -50px 10px 10px;
+            z-index: 20;
+        }
+        
+        ._links {
+            font-size: 35px;
+            font-family: 'Neucha', cursive;
+        }
+        
+        .first-page {
+            background-color: #e9cccb;
+        }
+        
+        .title {
+            color: #74513b;
+            font-family: 'Handlee', cursive;
+        }
+        
+        .third-page {
+            background-color: #565656;
+        }
+        
+        .nav a {
+            color: #e8e8e8;
+            text-align: center;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            transition: .2s;
+            text-decoration: none;
+            font-size: 20px;
+            border-radius: 100px;
+        }
+        
+        .nav a:hover {
+            background-color: azure;
+            color: white;
+            text-align: center;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            font-weight: bolder;
+            transition: 0.3s;
+            /* transform: translate3d(0, 20, 2); */
+            box-shadow: 12px 32px 12px 1px rgb(255, 255, 255);
+            overflow-y: hidden;
+            /* font-size: 20px; */
+        }
+        
+        div.col:hover p {
+            background-color: white;
+            box-shadow: 1px 3px 1px 1px blue;
+            color: black;
+            font-weight: bolder;
+        }
+        
+        div .link_items:hover p {
+            /* margin-top: -25px; */
+        }
+        
+        .second-page {
+            background-color: #dcdcb7;
+        }
+        
+        .fourth-page {
+            background-color: #ffc2d0;
+        }
+        
+        .contact-numbers {
+            padding: 10px;
+            display: inline-block;
+        }
+        
+        #contactme .hr hr {
+            width: 26%;
+            border: none;
+            border-top: 3px double #333;
+            color: #333;
+            overflow: visible;
+            text-align: center;
+            height: 5px;
+            margin-top: 1px;
+        }
+        
+        #contactme .hr hr:after {
+            /* content: 'ABOUT ME'; */
+            padding: 0 4px;
+            position: relative;
+            top: -23px;
+        }
+        
+        .rating.contact_numbers {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            text-align: center;
+            text-align: center;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffc2d0
+        }
+        
+        .rating.contact_numbers .rating {
+            background-color: #242424;
+            width: 30%;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 25px;
+            color: beige;
+            margin: 40px;
+        }
+        
+        .rating.contact_numbers {
+            padding: 25px;
+        }
+        
+        .checked {
+            color: orange;
+        }
+        
+        .fifth-page {
+            background-color: wheat;
+        }
+        
+        a.top {
+            color: beige;
+        }
+    </style>
+</head>
+
+<body class="body" onload="redirect()">
+
+    <center>
+
+        <div class="full-w border-dark mb-3">
+            <!-- 
+            <div class="nav navbar container  p-5 sticky-top bg-dark text-white">
+                <a class="link_items p-5 col" href="#resume">
+                    <p>Resume</p>
+                </a>
+                <a class="link_items p-5 col" href="#contactme">
+                    <p>Contact me</p>
+                </a>
+                <a class="link_items p-5 col" href="#portfolio">
+                    <p>Portfolio</p>
+                </a>
+                <a class="link_items p-5 col" target="_blank" href="https://github.com/gcnmagdaleno">
+                    <p>GitHub</p>
+                </a>
+
+            </div> -->
+            <div class="nav navbar text-center full-w sticky-top bg-dark
+                    text-white">
+                <label class="full-w">
+                        <a class="top full-w" href="#top">
+                            <p>BACK TO TOP</p>
+                        </a>
+                    </label>
+                <div class="row row-cols-4 full-w mb-n3 mt-n3">
+                    <div class="col full-w">
+                        <a class="link_items" href="#resume">
+                            <p class="rounded-pill">Resume</p>
+                        </a>
+
+                    </div>
+                    <div class="col full-w">
+                        <a class="link_items" href="#contactme">
+                            <p class="rounded-pill">Contact me</p>
+                        </a>
+                    </div>
+                    <div class="col full-w">
+                        <a class="link_items" href="#portfolio">
+                            <p class="rounded-pill">Portfolio</p>
+                        </a>
+                    </div>
+                    <div class="col full-w">
+                        <a class="link_items" target="_blank" href="https://github.com/gcnmagdaleno">
+                            <p class="rounded-pill">GitHub</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="first-page center" id="top">
+                <br><br>
+                <div class="m-5" id="title">
+                    <img loading="eager" class="p-1 w-50 cv_pic
+                            rounded-circle" src="cv_pic.jpg">
+                    <div class="title display-1 full-w font-weight-bolder
+                            m-b-md">
+                        Gian Carlo<br>Magdaleno</div>
+                </div>
+                <br><br>
+            </div>
+
+
+            <div class="third-page p-5" id="resume">
+                <br>
+                <b class="_links p-5 display-4 center text-white">
+                        RESUME<br><br><br>
+
+                        <a href="gian_cv_with_pic.pdf" class="p-5" download>
+                            <b style="padding:10px" class="link_items
+                                text-warning h3">DOWNLOAD
+                                MY
+                                RESUME <br> [PDF FILE]</b> </a>
+
+
+                <!-- <iframe class="p-5 full-h rounded show
+                            embed-responsive-item embed-responsive
+                            embed-responsive-16by9" src="cv.html" style="border-width:0;" allowfullscreen> </iframe> -->
+                </b>
+            </div>
+
+            <div class="fourth-page center p-5" id="contactme">
+                <br><br><br>
+                <div style="display: block;" class="hr">
+                    <hr>
+                    <b class="_links h1">
+                            ABOUT ME <br><br></b>
+                    <hr>
+                    <div class="contact-numbers">
+                        <h1 style="text-align: left;" class="mycontacts">My Contacts
+                            <br>
+                            <p style="width:100%;height: 100px; text-align:
+                                    left;" class="h2">
+                                <b>09227435159
+                                        <br>
+                                        09206404408
+                                        <br>
+                                        giancarlonabormagdaleno@gmail.com</p>
+                                </p>
+                            </b>
+                        </h1>
+                    </div>
+                    <div class="contact-numbers mb-n5 mt-5 h4">
+                        <h1 style="text-align: center;">Hire Me
+                        </h1>
+                        <br>
+                        <h3>
+                            I am easy to work with, can adjust fast to any environment,
+                            <br> eager to learn something new everytime.
+                            <br>Takes the work seriously,
+                            <br>Just needs a little guidance sometimes
+                            <br> to check if I am doing the right thing.
+                            </h2>
+
+                            <h3>
+                                <br> Hoping to be working with you or your company/organization soon!
+
+                            </h3>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="rating contact_numbers mt-n5">
+
+                <div class="skills title h1 center full-w">Skills</div>
+                <div class="rating rounded">
+
+                    <b>PHP</b><br>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+
+                <div class="rating rounded">
+
+                    <b>CSS</b><br>
+
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+
+                </div>
+
+                <div class="rating rounded">
+
+                    <b>HTML</b><br>
+
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+
+                </div>
+
+                <div class="rating rounded">
+
+                    <b>JAVASCRIPT</b><br>
+
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+
+                </div>
+
+                <div class="rating rounded">
+
+                    <b>ANDROID<br> (JAVA)</b><br>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+
+                <div class="rating rounded">
+
+                    <b>VB.NET<br>(VISUAL BASIC)</b><br>
+
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+
+                </div>
+
+                <div class="rating rounded">
+
+                    <b>LARAVEL</b><br>
+
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+
+                </div>
+
+                <div class="rating rounded">
+
+                    <b>JIRA</b><br>
+
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+
+                </div>
+
+                <div class="rating rounded">
+
+                    <b>DATABASES <br>(MYSQL, FIREBASE)</b>
+                    <br>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="fifth-page pt-5 pb-5" id="portfolio"> <br> <br>
+                <b class="_links"> PORTFOLIO
+                </b>
+
+                <div class="p-5">
+                    <div class="p-5">
+                        <a class="link_items text-dark h2 font-weight-bolder" href=./moneyloan/index.html target=_blank>
+
+                            <img loading="lazy" class="img_projects w-75" src="./moneyloan/loan.webp">
+                            <br>Project #1
+
+                        </a>
+                    </div>
+                    <div class="p-5">
+                        <a class="link_items text-dark h2 font-weight-bolder" href=./ictd/index.html target=_blank>
+
+                            <img loading=lazy class="img_projects w-75" src=ictd/ictd.png>
+                            <br>Project #2
+
+                        </a>
+                    </div>
+                    <div class="p-5">
+                        <a class="link_items text-dark h2 font-weight-bolder" href=barangay/index.html target=_blank>
+
+                            <img loading=lazy class="img_projects w-75" src="./barangay/br.webp">
+                            <br>Project #3
+
+                        </a>
+                    </div>
+                    <div class="p-5">
+                        <a class="link_items text-dark h2 font-weight-bolder" href=jec/index.html target=_blank>
+                            <img loading=lazy class="img_projects w-50 jec" src="./jec/jec.webp">
+                            <br>Project #4
+
+                        </a>
+                    </div>
+                    <!-- 
+            <div class="sixth-page h-100 pt-5 pb-5">
+
+            </div> -->
+                </div>
+
+    </center>
+</body>
+
+</html>
+
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+
+<script type="text/javascript" src="js/popper.min.js"></script>
+
+<script src="./smooth_scrolling.js" async></script>
