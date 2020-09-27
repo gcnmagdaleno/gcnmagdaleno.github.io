@@ -28,11 +28,11 @@
     <style>
         *,
          :root {
-            transition: 1s ease-in-out;
+            transition: 0.5s ease-in-out;
             -webkit-animation-name: fadeInUp;
-            -webkit-animation-duration: 1s;
+            -webkit-animation-duration: 0.5s;
             animation-name: fadeInUp;
-            animation-duration: 1s;
+            animation-duration: 0.5s;
             animation-timing-function: ease-in-out;
             -webkit-animation-timing-function: ease-in-out;
             -webkit-user-select: none;
@@ -40,7 +40,7 @@
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
-            cursor: none!important;
+            /* cursor: none!important; */
         }
         
          ::-webkit-scrollbar {
@@ -111,7 +111,7 @@
             font-family: 'Indie Flower', cursive;
             border: none;
             outline: none;
-            transition: 1s ease-in-out;
+            transition: 0.5s ease-in-out;
             width: 100%;
             font-size: 5vw;
             font-weight: bolder;
@@ -162,30 +162,32 @@
             text-align: left;
             background-color: mediumseagreen;
             box-shadow: 0px 0px 9px 9px cadetblue;
-            transition: 2s ease;
+            transition: 0.5s ease;
         } */
         
         #resume,
-        #portfolio {
+        #portfolio,
+        #contact-me {
             /* resume modal */
             position: fixed;
             z-index: 5;
             left: 5%;
-            top: 5;
+            top: 5%;
             width: 55%;
             height: 100%;
             overflow: auto;
             background-color: rgba(69, 90, 100, 1)!important;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             box-shadow: 9px 15px 19px 0px #212121;
-            transition: 2s ease!important;
+            transition: 0.5s ease!important;
             -webkit-animation-name: animatetop!important;
-            -webkit-animation-duration: 2s!important;
+            -webkit-animation-duration: 0.5s!important;
             animation-name: animatetop!important;
-            animation-duration: 2s!important;
+            animation-duration: 0.5s!important;
             animation-timing-function: ease-in-out!important;
             -webkit-animation-timing-function: ease-in-out!important;
-            display: inline-block!important;
+            /* display: inline-block; */
+            display: none;
         }
         
         .hide {
@@ -315,10 +317,29 @@
         
         .close {
             /* aligns the close button to the right */
-            margin-right: 50px!important;
-            margin-top: -20px!important;
-            padding: 20px!important;
-            margin: 20px!important;
+            /* margin-right: 50px!important;
+            margin-top: -30px!important; */
+            right: 10px!important;
+            top: 50px;
+            display: block;
+            background-color: powderblue!important;
+            opacity: 1!important;
+            color: #242424!important;
+            z-index: 55;
+            padding: 1vw!important;
+            margin: 1vw!important;
+        }
+        
+        .close label {
+            font-size: 1rem!important;
+        }
+        
+        .close:hover {
+            padding: 1vw!important;
+            margin: 1vw!important;
+            display: block;
+            background-color: cadetblue!important;
+            color: #212121!important;
         }
         
         .modals,
@@ -395,8 +416,10 @@
     </style>
 </head>
 
+
 <body class="bg-dark">
-    <img class="cursor" loading="eager" src="./cursor1.png" width="50" height="50" alt="cursor">
+    <div class="close text-right sticky-top rounded-pill shadow "><label>close</label></div>
+    <!-- <img class="cursor" loading="eager" src="./cursor1.png" width="50" height="50" alt="cursor"> -->
     <kbd class="loading full-w full-h text-white bg-dark p-5 m-5" id="loading text-center " onmousedown="detectMouseClick(event)">
         <label for="loading" class="p-5 m-5"> gcnmagdaleno.cli<br>version 1.0
         
@@ -404,92 +427,274 @@
         <!-- <img class="" width="1000px" height="1000px" src="./slow.jpg" style="z-index: -100;"> -->
 
     </kbd>
-    <div class=" modals p-5 full-h full-w bg-dark ">
-        <center class="">
-            <div><span class="btn close text-white text-right m-5 p-5 sticky-top ">close</span></div>
-
-
-            <div class="wh90 resume" id="resume">
+    <!-- <div class=" modals p-5 full-h full-w bg-dark "> -->
+    <center class="">
 
 
 
+        <div class="wh90 resume" id="resume">
 
-                <br><br>
-                <b class="_links display-4 center text-white ">
+
+
+
+            <br><br>
+            <b class="_links display-4 center text-white ">
                 RESUME
                 <br>
                 <a href="gian_cv_with_pic.pdf " download>
                     <b style="padding:10px " class="link_items h3 ">(DOWNLOAD
                         MY
                         RESUME)</b> </a>
-                <!-- <div class="include-resume p-5 full-w full-h rounded show embed-responsive-item embed-responsive "></div> -->
-                <br>
+            <!-- <div class="include-resume p-5 full-w full-h rounded show embed-responsive-item embed-responsive "></div> -->
+            <br>
+            </b>
+            <iframe class="wh90 full-w rounded show " src="cv.html " style="border-width:0; " allowfullscreen> </iframe>
+
+            <br> <br>
+        </div>
+
+
+        <div class="wh90 portfolio" id="portfolio">
+
+
+
+
+            <br><br>
+
+            <b class="_links h1 text-weight-bolder mb-n5"> PORTFOLIO
                 </b>
-                <iframe class="wh90 full-w rounded show " src="cv.html " style="border-width:0; " allowfullscreen> </iframe>
 
-                <br> <br>
-            </div>
+            <div class="p-5 mt-n5">
+                <div class="p-5">
+                    <a class="link_items text-dark h2 font-weight-bolder" href=./moneyloan/index.html target=_blank>
 
+                        <img loading="lazy" class="img_projects w-50" src="./moneyloan/ml.png">
+                        <br>Project #1
 
-            <div class="wh90 portfolio" id="portfolio">
+                    </a>
+                </div>
+                <div class="p-5">
+                    <a class="link_items text-dark h2 font-weight-bolder" href=./ictd/index.html target=_blank>
 
+                        <img loading="lazy" class="img_projects w-50" src=ictd/ictd.png>
+                        <br>Project #2
 
+                    </a>
+                </div>
+                <div class="p-5">
+                    <a class="link_items text-dark h2 font-weight-bolder" href=barangay/index.html target=_blank>
 
+                        <img loading="lazy" class="img_projects w-50" src="./barangay/br.webp">
+                        <br>Project #3
 
-                <br><br>
+                    </a>
+                </div>
+                <div class="p-5">
+                    <a class="link_items text-dark h2 font-weight-bolder" href=jec/index.html target=_blank>
+                        <img loading="lazy" class="img_projects img-fluid w-50 jec" src="./jec/jec1_pixel_really_blue_portrait.webp">
+                        <br>Project #4
 
-                <b class="_links h1 text-weight-bolder mb-n5"> PORTFOLIO
-                </b>
-
-                <div class="p-5 mt-n5">
-                    <div class="p-5">
-                        <a class="link_items text-dark h2 font-weight-bolder" href=./moneyloan/index.html target=_blank>
-
-                            <img loading="lazy" class="img_projects w-50" src="./moneyloan/ml.png">
-                            <br>Project #1
-
-                        </a>
-                    </div>
-                    <div class="p-5">
-                        <a class="link_items text-dark h2 font-weight-bolder" href=./ictd/index.html target=_blank>
-
-                            <img loading="lazy" class="img_projects w-50" src=ictd/ictd.png>
-                            <br>Project #2
-
-                        </a>
-                    </div>
-                    <div class="p-5">
-                        <a class="link_items text-dark h2 font-weight-bolder" href=barangay/index.html target=_blank>
-
-                            <img loading="lazy" class="img_projects w-50" src="./barangay/br.webp">
-                            <br>Project #3
-
-                        </a>
-                    </div>
-                    <div class="p-5">
-                        <a class="link_items text-dark h2 font-weight-bolder" href=jec/index.html target=_blank>
-                            <img loading="lazy" class="img_projects img-fluid w-50 jec" src="./jec/jec1_pixel_really_blue_portrait.webp">
-                            <br>Project #4
-
-                        </a>
-                    </div>
-                    <!-- 
+                    </a>
+                </div>
+                <!-- 
                     <div class="sixth-page h-100 pt-5 pb-5">
 
                     </div> -->
-                    <!-- </div> -->
-                </div>
-
-                <br> <br>
+                <!-- </div> -->
             </div>
-        </center>
 
-    </div>
+            <br> <br>
+        </div>
+
+        <div class="contact-me" id="contact-me">
+            <div class="fifth-page center p-5" id="contactme">
+                <br><br>
+                <div class="hr ">
+                    <hr>
+                    <b class="_links h1">
+                            ABOUT ME <br><br></b>
+                    <hr>
+                    <div class="d-flex flex-sm-row flex-column text-break">
+                        <div class="mr-auto p-5 text-break">
+
+
+                            <h2 style="width:100%; text-align:
+                        left;">My Contacts</h2>
+
+                            <h3 style="width:100%; text-align:
+                        left;">
+
+                                <b>09227435159
+                                    <br>
+                                    09206404408
+                                    <br>
+                                    <p>giancarlonabormagdaleno@gmail.com</p>
+                                
+                                </b>
+
+
+                            </h3>
+                            </b>
+                        </div>
+                        <div class="p-5 text-break">
+                            <h2>Hire Me
+                            </h2>
+                            <br>
+                            <h3>
+                                I am easy to work with, can adjust fast to any environment,
+                                <br> eager to learn something new everytime.
+                                <br>Takes the work seriously,
+                                <br>Just needs a little guidance sometimes
+                                <br> to check if I am doing the right thing.
+                            </h3>
+
+                            <h4>
+                                <br> Hoping to be working with you or your company/organization soon!
+                                <br>
+                                <br>
+                                <br>
+                            </h4>
+                        </div>
+                    </div>
+
+                    <div class="rating  contact_numbers mt-n5" id="skills">
+
+                        <div class="skills title h1 center full-w">Skills</div>
+                        <div class="rating rounded shadow" data-toggle="tooltip" data-placement="top" title="Tooltip on top" role="tootltip">
+
+                            <b>PHP</b><br>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+
+                        <div class="rating rounded shadow">
+
+                            <b>CSS</b><br>
+
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+
+                        </div>
+
+                        <div class="rating rounded shadow">
+
+                            <b>HTML</b><br>
+
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+
+                        </div>
+
+                        <div class="rating rounded shadow">
+
+                            <b>JAVASCRIPT</b><br>
+
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+
+                        </div>
+
+                        <div class="rating rounded shadow">
+
+                            <b>ANDROID<br> (JAVA)</b><br>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+
+                        <div class="rating rounded shadow">
+
+                            <b>DATABASES <br>(MYSQL, FIREBASE)</b>
+                            <br>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+
+                        </div>
+
+                        <div class="rating rounded shadow">
+
+                            <b>VB.NET</b><br>
+
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+
+                        </div>
+
+                        <div class="rating rounded shadow">
+
+                            <b>LARAVEL</b><br>
+
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+
+                        </div>
+
+                        <div class="rating rounded shadow">
+
+                            <b>JIRA</b><br>
+
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+
+                        </div>
+
+                        <div class="rating rounded shadow">
+
+                            <b>GIT</b><br>
+
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </center>
+
+    <!-- </div> -->
     <center class="bg-dark hide">
 
         <div class="terminal bg-dark text-white p-2 full-w  " id="terminal">
-            <label class="fileName sticky-top bg-dark full-w " id="fileName ">Porfolio > Gian Carlo Magdaleno</label>
-            <pre class="bg-dark text-white full-w h4 " id="pre "><label id="commandUser" class="commandUser text-right">User Commands</label><br class="commandSeparator"><label id="commandSystem" class="commandSystem mt-2">List of available commands<br>-v resm *this command lets you view my resume*<br>./cls *this one clears the screen*<br>NOTE: escape key can also be used when closing a modal. </label><br><br><br><br><br><br></pre>
+            <label class="fileName sticky-top bg-dark full-w" id="fileName "><!--Porfolio--> Gian Carlo Nabor Magdaleno</label>
+            <pre class="bg-dark text-white full-w h4 " id="pre "><label id="commandUser" class="commandUser text-right">User Commands</label><br class="commandSeparator"><label id="commandSystem" class="commandSystem mt-2">List of available commands<br>-v resm *this command lets you view my resume*<br>-v prtf *enter command to view my portfolio*<br>./cls *this one clears the screen*<br>NOTE: escape key can also be used when closing a modal. </label><br><br><br><br><br><br></pre>
             <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
             <div class="d-flex bg-dark ">
                 <b class="d-flex fixed-bottom pl-3 pr-3 bg-dark ">><input type="text " name="commands-input " class="commands-input bg-dark d-flex flex-grow-1 pl-4 pb-2 text-white fixed-bottoms " id="commands-input " placeholder="enter command "></b>
@@ -520,14 +725,15 @@
         $('.hide').show();
         $('.terminal, #terminal, pre, .commandSystem,.commandUser').show();
         $('#loading,.loading').hide();
-
+        $('.commands-input').focus();
         // $('.modals').show();
 
     }
+
     $(window).on('load', function() {
         setTimeout(function() {
 
-
+            $('.commands-input').focus();
             console.log(localStorage.getItem('firstTime'));
             if (localStorage.getItem('firstTime') === null || localStorage.getItem('firstTime') === 'yes') {
                 localStorage.setItem('firstTime', 'no');
@@ -558,7 +764,7 @@
     let commandsInput = $('.commands-input');
     let commandContainer = document.querySelector('#terminal');
     let resumeSelector = document.querySelector('#resume');
-    let closeBtn = document.querySelector('span.close');
+    let closeBtn = document.querySelector('.close');
     let portfolioSelector = document.querySelector('#portfolio');
     let commandsHistory = $('.terminal pre');
     let commandsSystem = $('.terminal #commandSystem');
@@ -612,7 +818,7 @@
     function openResume() {
         portfolioSelector.style.display = 'none';
         resumeSelector.style.display = 'inline-block';
-        document.querySelector('.modals').style.display = 'block';
+        document.querySelector('.close').style.display = 'block';
         document.querySelector('iframe').style.display = 'block';
 
         commandContainer.style.display = 'none';
@@ -625,8 +831,8 @@
     }
 
     function openPortfolio() {
-        document.querySelector('.modals').style.display = 'block';
-        document.querySelector('iframe').style.display = 'block';
+        document.querySelector('.close').style.display = 'block';
+        // document.querySelector('iframe').style.display = 'block';
         resumeSelector.style.display = 'none';
         commandContainer.style.display = 'none';
         closeBtn.style.display = 'block';
@@ -641,7 +847,9 @@
 
         document.querySelector('#terminal').style.display = 'block';
         commandsInput.focus();
-        document.querySelector('.modals').style.display = 'none';
+        document.querySelector('#resume').style.display = 'none';
+        document.querySelector('#portfolio').style.display = 'none';
+        $('#portfolio').hide();
         closeBtn.style.display = 'none';
         resumeSelector.style.display = 'none';
         portfolioSelector.style.display = 'none';
