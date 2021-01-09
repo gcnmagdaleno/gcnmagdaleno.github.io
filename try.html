@@ -40,7 +40,7 @@
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
-            cursor: none !important;
+            /* cursor: none !important; */
 
         }
 
@@ -692,6 +692,7 @@
 <script>
     //code here using lines[i] which will give you each line
     console.log('lines:\n' + $('#pre').text().split('\n').length);
+    $('.commands-input').focus();
 
     function detectMouseClick(event) {
         console.log("You pressed mouse button: " + event.button);
@@ -713,6 +714,7 @@
                 $('#loading,.loading').show();
                 let getCommandSystem = document.querySelector('.commandSystem');
                 getCommandSystem.style.color = 'rgb(200,200,200)';
+                $('.commands-input').focus();
             } else if (localStorage.getItem('firstTime') === 'no') {
                 // alert('not your first time visiting this site');
                 console.log(localStorage.getItem('firstTime'));
@@ -748,6 +750,7 @@
             commandsSystem.text('command: view resume\n');
             console.log($(commandUser).text());
             commandsInput.val('');
+            $('.commands-input').focus();
         } else if (commandsGiven.match(/-v prtf/)) {
             console.log('command: view portfolio\n');
             console.log('null');
@@ -756,18 +759,22 @@
             console.log($(commandUser).text());
             openPortfolio();
             commandsInput.val('');
+            $('.commands-input').focus();
         } else if (commandsGiven.match(/-g cmd/)) {
             console.log('show all commands');
             commandUser.text('> ' + commandsInput.val().trim());
             commandsSystem.text('show all the commands\n' + txtCommands)
             commandsInput.val('');
+            $('.commands-input').focus();
         } else if (commandsGiven.match(/-g cls/)) {
             console.log('Clear Screen');
             commandUser.text('> ' + commandsInput.val().trim());
             commandsInput.val('');
+            $('.commands-input').focus();
         } else {
             commandsSystem.text('oops.. wrong command\n' + txtCommands);
             commandsInput.val('');
+            $('.commands-input').focus();
         }
     }
 
@@ -802,7 +809,7 @@
         closeBtn.style.display = 'none';
         resumeSelector.style.display = 'none';
         portfolioSelector.style.display = 'none';
-
+        $('.commands-input').focus();
         if (parseFloat($('#pre').text().split('\n').length) >= parseFloat(14)) {
             commandsSystem.text('');
         }
@@ -811,6 +818,7 @@
     //fetch whatever the user input command and executes it after enter key is presssed
     $(commandsInput).keyup(function (e) {
         if (e.which == 13) {
+            $('.commands-input').focus();
             if (commandsSystem.text().match(/List/)) {
                 commandsSystem.text('');
                 executeCommand(commandsInput.val());
@@ -822,6 +830,7 @@
 
     // close the modal when user pressed escape/escape key on the keyboard
     $('html').keyup(function (e) {
+        $('.commands-input').focus();
         if (e.keyCode == 27) {
             close();
         }
@@ -829,6 +838,7 @@
 
     //close the modal when user clicks outside of the modal
     window.onclick = function (event) {
+        $('.commands-input').focus();
         if (event.target == resumeSelector) {
             close();
         }
@@ -836,6 +846,7 @@
 
     //closes the modal when close button is clicked
     closeBtn.onclick = function () {
+        $('.commands-input').focus();
         close();
     }
 </script>
