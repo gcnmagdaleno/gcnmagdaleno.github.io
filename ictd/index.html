@@ -13,18 +13,18 @@
             padding: 0;
             margin: 0 auto;
         }
-        
+
         a {
             text-decoration: none;
             color: #212121;
         }
-        
-         ::-webkit-scrollbar {
+
+        ::-webkit-scrollbar {
             display: none;
             scrollbar-width: none;
             -ms-overflow-style: none;
         }
-        
+
         html,
         body,
         html::-webkit-scrollbar,
@@ -42,28 +42,28 @@
             justify-content: center;
             vertical-align: middle;
         }
-        
+
         .title {
             font-size: 44px;
         }
-        
+
         #ictd .column {
             width: 25%;
             padding: 20px;
             display: inline-block;
             grid-template-rows: auto;
         }
-        
+
         #ictd .row {
             margin: 0 -5px;
         }
-        
+
         #ictd .row:after {
             content: "";
             display: table;
             clear: both;
         }
-        
+
         #ictd .card {
             box-shadow: 0 14px 16px 0 rgba(43, 28, 28, 0.2);
             padding: 10px;
@@ -73,14 +73,14 @@
             height: 120px;
             width: 200px;
         }
-        
+
         #ictd .img_projects {
             padding: 10px;
             transition: 1s;
             height: 100px;
             margin-bottom: 20px;
         }
-        
+
         .ictd.content .description {
             font-size: 24px;
             padding: 80px;
@@ -91,33 +91,36 @@
             text-align: justify;
             margin-bottom: -65px;
         }
-        
+
         a[href="https://bcda.gov.ph/"] {
             font-weight: bold;
         }
-        
+
         a p {
             font-size: 33px;
         }
-        
+
         .row a p {
             font-size: 25px;
         }
-        
+
         @media (max-width: 600px) {
             .content b.title {
                 font-size: 33px;
             }
+
             footer div {
                 width: 100% !important;
                 margin: 0 !important;
             }
+
             #ictd .column {
                 width: 100%;
                 display: block;
                 margin-bottom: 20px;
                 margin-left: -18px;
             }
+
             #ictd .description {
                 font-size: 20px;
                 -moz-text-align-last: center;
@@ -128,6 +131,7 @@
                 margin-right: 20px;
                 margin-bottom: 20px;
             }
+
             a p {
                 font-size: 20px;
             }
@@ -144,25 +148,21 @@
 
         <div class="ictd content" id="ictd">
             <div class="description">
-                This project was partially created and proposed to the Information and Communication Technologies and Development (I.C.T.D) Department of
-                <a href="https://bcda.gov.ph/" target="_blank">Bases Conversion and Development Authority (B.C.D.A)</a
-          >
-          to monitor their video conferencing calls.
-          <em
-            ><strong
-              ><a href="https://bcda.gov.ph/" target="_blank">BCDA</a></strong>
-                is where I did my internship.</em>
+                This project was partially created and proposed to the Information and Communication Technologies and
+                Development (I.C.T.D) Department of
+                <a href="https://bcda.gov.ph/" target="_blank">Bases Conversion and Development Authority (B.C.D.A)
+                </a>
+                to monitor their video conferencing calls.
+                <em>
+                    <strong>
+                        <a href="https://bcda.gov.ph/" target="_blank">BCDA</a>
+                    </strong>
+                    is where I did my internship.
+                </em>
                 <br /><br />
-                <!-- 
-        <p> Want to know more about BCDA? <b><u>Click here</u></b>.</p>
-    </a> -->
             </div>
 
-            <hr style="
-            width: 25%;
-            background-color: black;
-            color: black;
-            border-color: black;
+            <hr style="width: 25%; background-color: black; color: black; border-color: black;
           " />
             <br />
             <div class="row">
@@ -177,7 +177,8 @@
                     </div>
                     <br />
                 </div>
-                <a href="https://drive.google.com/drive/folders/1-qVhsvG7aegRYYNxsHL6I_G_74dfB-yp?usp=sharing" target="_blank">
+                <a href="https://drive.google.com/drive/folders/1-qVhsvG7aegRYYNxsHL6I_G_74dfB-yp?usp=sharing"
+                    target="_blank">
                     <p>
                         <b><u>Click here</u></b> to download. [Google Drive]
                     </p>
@@ -189,8 +190,8 @@
 
 </html>
 <script>
-    $(document).ready(function() {
-        $("a").on("click", function(a) {
+    $(document).ready(function () {
+        $("a").on("click", function (a) {
             if (this.hash !== "") {
                 a.preventDefault();
                 var b = this.hash;
@@ -198,7 +199,7 @@
                         scrollTop: $(b).offset().top,
                     },
                     200,
-                    function() {
+                    function () {
                         window.location.hash = b;
                     }
                 );

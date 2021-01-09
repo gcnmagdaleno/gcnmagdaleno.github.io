@@ -1,0 +1,62 @@
+
+
+
+
+@font-face {
+    font-family: '001_a';
+    src: url('dancingscript_googlefont-webfont.woff2') format('woff2'),
+         url('dancingscript_googlefont-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: '001_b'
+    src: url('dancingscript-variablefont_wght-webfont.woff2') format('woff2'),
+         url('dancingscript-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: '002_a';
+    src: url('merienda-bold-webfont.woff2') format('woff2'),
+         url('merienda-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: '002_b';
+    src: url('merienda-regular-webfont.woff2') format('woff2'),
+         url('merienda-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: '003_a';
+    src: url('synemono-regular-webfont.woff2') format('woff2'),
+         url('synemono-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
