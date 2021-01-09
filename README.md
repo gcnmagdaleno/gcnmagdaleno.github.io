@@ -5,11 +5,11 @@
 | Locations | Links |
 | ---------- | ---------- |
 | Main | http://gcnmagdaleno.github.io/ |
-| Portfolio | https://gcnmagdaleno.github.io/index.html#portfolio |
-| Resume | https://gcnmagdaleno.github.io/index.html#resume |
-| About | https://gcnmagdaleno.github.io/index.html#contactme |
-| Skills | https://gcnmagdaleno.github.io/index.html#skills |
-| Location | https://gcnmagdaleno.github.io/index.html#location |
+| Portfolio | https://gcnmagdaleno.github.io/stable.html#portfolio |
+| Resume | https://gcnmagdaleno.github.io/stable.html#resume |
+| About | https://gcnmagdaleno.github.io/stable.html#contactme |
+| Skills | https://gcnmagdaleno.github.io/stable.html#skills |
+| Location | https://gcnmagdaleno.github.io/stable.html#location |
 | Github | https://github.com/gcnmagdaleno |
 ```html
 <button onmousedown="buttonClick()">CLICK ME</button>

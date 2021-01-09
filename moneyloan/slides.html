@@ -2,17 +2,16 @@
 <html>
 
 <head>
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
         * {
             box-sizing: border-box;
         }
-        
+
         w-50 {
             width: 50%;
         }
-        
+
         html {
             justify-items: center;
             text-align: center;
@@ -22,27 +21,29 @@
             padding: 0;
             margin: 0 auto;
         }
-        
+
         body {
             font-family: Verdana, sans-serif;
         }
-        
+
         .mySlides {
             display: none;
         }
-        
+
         .fade img {
             vertical-align: middle;
             width: 50%;
             height: 480px;
         }
+
         /* Slideshow container */
-        
+
         .slideshow-container {
             position: relative;
         }
+
         /* Caption text */
-        
+
         .text {
             color: #f2f2f2;
             font-size: 15px;
@@ -52,14 +53,15 @@
             width: 100%;
             text-align: center;
         }
+
         /* Number text (1/3 etc) */
-        
-         ::-webkit-scrollbar {
+
+        ::-webkit-scrollbar {
             display: none;
             scrollbar-width: none;
             -ms-overflow-style: none;
         }
-        
+
         .numbertext {
             color: #f2f2f2;
             font-size: 12px;
@@ -69,49 +71,55 @@
             text-align: center;
             margin-left: 100px;
         }
+
         /* The dots/bullets/indicators */
-        
+
         .active {
             background-color: #717171;
         }
+
         /* Fading animation */
-        
+
         .fade {
             -webkit-animation-name: fade;
             -webkit-animation-duration: 4.5s;
             animation-name: fade;
             animation-duration: 4.5s;
         }
-        
+
         @-webkit-keyframes fade {
             from {
                 opacity: 0.4;
             }
+
             to {
                 opacity: 1;
             }
         }
-        
+
         @keyframes fade {
             from {
                 opacity: 0.4;
             }
+
             to {
                 opacity: 1;
             }
         }
+
         /* On smaller screens, decrease text size */
-        
+
         @media only screen and (max-width: 300px) {
             .text {
                 font-size: 11px;
             }
+
             .fade img {
                 width: 90%;
                 height: 180px;
             }
         }
-        
+
         @media (max-width: 600px) {
             .fade img {
                 width: 90%;

@@ -1,20 +1,9 @@
-<script>
-    function conditionRedirect() {
-        if (screen.width <= 768) {
-            window.location = "index-mobile.html"
-
-        }
-    }
-
-    function redirect() {
-        setInterval(conditionRedirect, .0005);
-    }
-</script>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="57x57" href="./favico/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="./favico/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="./favico/apple-icon-72x72.png">
@@ -29,702 +18,230 @@
     <link rel="icon" type="image/png" sizes="96x96" href="./favico/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favico/favicon-16x16.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="manifest" href="./favico/manifest.json">
+    <link rel="manifest" href="../favico/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="./favico/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfolio - Gian Carlo Nabor Magdaleno</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <title>Games - Portfolio</title>
     <style>
-         :root,
-        * {
-            color: azure;
-            transition: .5s ease;
-            overflow-wrap: break-word!important;
-            word-break: break-all!important;
-            cursor: none;
+        html,
+        body {
+            margin: 0 !important;
+            height: 100% !important;
+            overflow: hidden !important;
         }
-        
-        @keyframes shake {
-            60% {
-                transform: rotate(5deg);
-            }
-            80% {
-                transform: rotate(-5deg);
-            }
-            100% {
-                transform: rotate(0deg);
-            }
-        }
-        
-        body,
-        html {
-            /* Used to enable scrolling */
-            background: linear-gradient( rgba(38, 50, 56, 1), rgba(96, 125, 139, 1));
-            transition: .5s ease;
-        }
-        
-        .cursor {
-            /* cursor: url('./cursor.png'), auto!important; */
-            transform: translate(-5%, -5%);
-            pointer-events: none;
-            /* transition: .5 ease; */
-            position: absolute;
-            transition: height .3s cubic-bezier(0.46, 0.03, 0.52, 0.96), width .3s cubic-bezier(0.46, 0.03, 0.52, 0.96);
-            z-index: 5000;
-            position: fixed;
-        }
-        
-        a[download] b {
-            color: white!important;
-        }
-        
-        .wrapper {
-            background-color: rgba(55, 71, 79, 1)!important;
-        }
-        
-        .nav {
-            background-color: rgba(38, 50, 56, 1)!important;
-            margin-top: -1px;
-        }
-        
-        .first-page {
-            background-color: rgba(38, 50, 56, 1)!important;
-            /* background-color: red; */
-            -moz-transform: skew(0deg, -7deg);
-            -webkit-transform: skew(0deg, -7deg);
-            -o-transform: skew(0deg, -7deg);
-            -ms-transform: skew(0deg, -7deg);
-            transform: skew(0deg, -15deg);
-        }
-        
-        .second-page {
-            background-color: rgba(84, 110, 122, 1)!important;
-        }
-        
-        .third-page {
-            background-color: rgba(55, 71, 79, 1)!important;
-        }
-        
-        .first-page div {
-            /* -moz-transform: none!important;
-            -webkit-transform: none!important;
-            -o-transform: none!important;
-            -ms-transform: none!important;
-            transform: none!important; */
-            -moz-transform: skew(0deg, 7deg);
-            -webkit-transform: skew(0deg, 7deg);
-            -o-transform: skew(0deg, 7deg);
-            -ms-transform: skew(0deg, 7deg);
-            transform: skew(0deg, 8deg);
-        }
-        
-        .text-dark {
-            color: #6b778d!important;
-        }
-        
-        .fourth-page {
-            background-color: rgba(69, 90, 100, 1)!important;
-            overflow: scroll;
-        }
-        
-        .fifth-page {
-            background-color: rgba(96, 125, 139, 1)!important;
-        }
-        
-        .shadow:hover {
-            -webkit-box-shadow: -1px -1px 69px -1px rgba(245, 226, 245, 1);
-            -moz-box-shadow: -1px -1px 69px -1px rgba(245, 226, 245, 1);
-            box-shadow: -1px -1px 69px -1px rgba(21, 21, 21, 1)!important;
-            transition: .5s ease;
-        }
-        
-        .row.full-w.p-5.m-3 div:hover,
-        .d-flex.full-w.bd-highlight.p-5.m-3 div:hover {
-            background-color: plum;
-            color: black;
-            font-size: 20px;
-        }
-        
-        .row.full-w.p-5.m-3 div,
-        .d-flex.full-w.bd-highlight.p-5.m-3 div {
-            position: relative;
-        }
-        
-        .full-h {
-            height: 100vh;
-        }
-        
-        .full-w {
-            width: 100%;
-        }
-        
-        .center {
-            display: grid;
-            place-items: center;
-        }
-        
-         ::-webkit-scrollbar {
+
+        .isLoaded,
+        #isLoaded {
             display: none;
-            scrollbar-width: none;
-            -ms-overflow-style: none
         }
-        /* .rating.rounded:hover {
-            animation: shake .5s;
-        } */
-        
-        @import url('https://fonts.googleapis.com/css2?family=Handlee&family=Neucha&family=Spartan:wght@900&display=swap');
-        #fab_button,
-        [src="up_arrow.webp"] {
-            border-radius: 1000px;
-            -webkit-border-radius: 1000px;
-            -moz-border-radius: 1000px;
-            width: 50px;
-            height: 50px;
-            float: right;
-            margin: -50px 10px 10px;
-            z-index: 20;
+
+        body {
+
+            background-color: #212121;
+            overflow: scroll;
+            overflow-x: hidden;
+            -webkit-touch-callout: none;
+            /* iOS Safari */
+            -webkit-user-select: none;
+            /* Safari */
+            -khtml-user-select: none;
+            /* Konqueror HTML */
+            -moz-user-select: none;
+            /* Old versions of Firefox */
+            -ms-user-select: none;
+            /* Internet Explorer/Edge */
+            user-select: none;
+            /* Non-prefixed version, currently
+            supported by Chrome, Edge, Opera and Firefox */
         }
-        
-        ._links {
-            font-size: 35px;
-            color: beige!important;
-            font-family: 'Neucha', cursive;
-        }
-        
-        .title {
-            color: azure;
-            font-family: 'Handlee', cursive;
-        }
-        
-        .nav {
-            z-index: 5!important;
-            /* position: absolute; */
-        }
-        
-        .nav a {
-            position: absolute;
-            color: #e8e8e8;
-            text-align: center;
-            align-content: center;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            text-align: center;
-            align-content: center;
-            align-items: center;
-            justify-content: center;
-            transition: .2s;
-            text-decoration: none;
-            font-size: 20px;
-            border-radius: 100px;
-        }
-        
-        .nav a:hover {
-            background-color: azure;
-            color: white;
-            text-align: center;
-            align-content: center;
-            align-items: center;
-            justify-content: center;
-            font-weight: bolder;
-            transition: 0.3s;
-            /* transform: translate3d(0, 20, 2); */
-            box-shadow: 12px 32px 12px 1px rgb(255, 255, 255);
-            overflow-y: hidden;
-            transition: .5s ease;
-            z-index: -55!important;
-            /* font-size: 20px; */
-        }
-        
-        div.col:hover p {
-            background-color: white;
-            box-shadow: 1px 3px 1px 1px blue;
-            color: black;
-            font-weight: bolder;
-            transition: .5s ease;
-        }
-        
-        #portfolio a:hover {
-            color: coral!important;
-            transition: .5s ease;
-        }
-        
-        div .link_items:hover p {
-            font-size: 25px;
-            transition: .25s ease;
-        }
-        
-        .link_items {
-            color: #ffff!important;
-        }
-        
-        .rating.contact_numbers {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            text-align: center;
-            text-align: center;
-            align-content: center;
-            align-items: center;
-            justify-content: center;
-            padding: 100px;
-            /* background-color: rgba(84, 110, 122, 1)!important; */
-        }
-        /* .first-page {
-            background-color: #e9cccb;
-        }
-        
-        .second-page {
-            background-color: #dcdcb7;
-        }
-        
-        .third-page {
-            background-color: #565656;
-        }
-        
-        .fourth-page {
-            background-color: #ffc2d0;
-        }
-        
-        .fifth-page {
-            background-color: wheat;
-        } */
-        
-        .contact-numbers {
-            padding: 50px;
-            display: inline-block;
-        }
-        
-        #contactme .hr hr {
-            width: 26%;
-            border: none;
-            border-top: 3px double beige;
-            color: #333;
-            overflow: visible;
-            text-align: center;
-            height: 5px;
-            margin-top: 1px;
-        }
-        
-        #contactme .hr hr:after {
-            /* content: 'ABOUT ME'; */
-            padding: 0 4px;
-            position: relative;
-            top: -23px;
-        }
-        
-        .rating.contact_numbers .rating {
-            background-color: #242424;
-            width: 30%;
-            margin: 10px;
-            text-align: center;
-            line-height: 75px;
-            font-size: 25px;
-            margin: 40px;
-            color: rgba(255, 248, 225, .8)!important;
-        }
-        
-        .rating.contact_numbers .rating:hover {
-            color: rgba(255, 248, 225, 1)!important;
-            transition: .25s ease;
-        }
-        
+
+        :any-link,
+        a:link,
+        a:visited,
+        a:active,
         a:hover {
-            transition: .5s ease;
+            color: whitesmoke;
+            text-decoration: none;
+
         }
-        
-        .rating.contact_numbers .rating b {
-            color: rgba(255, 248, 255, 1)!important;
-            transition: .25s ease;
+
+        ::-webkit-scrollbar {
+            width: 0px;
+            /* Remove scrollbar space */
+            background: transparent;
+            /* Optional: just make scrollbar invisible */
         }
-        /* .rating.contact_numbers .rating:hover b {
-            color: rgba(255, 248, 255, 1)!important;
-        } */
-        
-        .checked {
-            color: rgba(255, 152, 0, .8)!important;
+
+        /* Optional: show position indicator in red */
+        ::-webkit-scrollbar-thumb {
+            background: #FF0000;
         }
-        
-        .rating.rounded:hover .checked {
-            color: rgba(255, 152, 0, 1)!important;
-            transition: .5s ease;
+
+        body b.h1 {
+            font-size: 5vw;
+        }
+
+        .grid-container--fit {
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        }
+
+        .grid-container {
+            display: grid;
+        }
+
+        .grid-container--fill {
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        }
+
+        .grid-container--fit {
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        }
+
+        .grid-element {
+
+            padding: 10px;
+            margin: 20px;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .wh-100 {
+            width: 100vw;
+            height: 100vh;
+            text-align: center;
+            align-items: center;
+            vertical-align: middle;
+            align-self: center;
+            align-content: center;
+
+        }
+
+        .hover:hover,
+        .title:hover {
+            background-color: rgb(184, 139, 139);
+            color: #242424;
+            transition: .2s ease-in;
+        }
+
+        .hover,
+        .title {
+
+            transition: .5s ease-out;
+        }
+
+        .hover b.h1 {
+            line-height: 60vh;
+        }
+
+        .hover:hover b.h1 {
+            display: none;
+        }
+
+        div.hover label.hover,
+        .row label.hover {
+            display: none;
+            transition: .2s ease-in-out;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            word-break: break-word
+        }
+
+        .row div.h1 {
+            line-height: 60vh;
+        }
+
+        .row label.hover:hover {
+            display: block;
+            font-size: 2em;
+            display: inline-block;
+            transition: .2s ease-in-out;
+            line-height: 60vh;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            word-break: break-word
         }
     </style>
 </head>
 
-<body class="body card full-w" onload="redirect()">
-
-
+<body>
     <center>
-
-        <div class="wrapper full-w">
-
-            <div class="nav navbar text-center text-white full-w sticky-top
-                    text-dark">
-
-                <label class="full-w ">
-                        <a class="top text-warning " href="#top">
-                            <p>BACK TO TOP</p>
-                        </a>
-                    </label>
-
-                <div class="row full-w row-cols-4 ml-1 mr-1 mb-n3 mt-n4">
-                    <div class="col ">
-                        <a class="link_items text-white" href="#portfolio">
-                            <p class="rounded-pill">Portfolio</p>
-                        </a>
-                    </div>
-                    <div class="col ">
-                        <a class="link_items text-white" href="#resume">
-                            <p class="rounded-pill">Resume</p>
-                        </a>
-
-                    </div>
-                    <div class="col ">
-                        <a class="link_items text-white" href="#contactme">
-                            <p class="rounded-pill">Contact me</p>
-                        </a>
-                    </div>
-                    <div class="col ">
-                        <a class="link_items text-white" target="_blank" href="https://github.com/gcnmagdaleno">
-                            <p class="rounded-pill">GitHub</p>
-                        </a>
-                    </div>
-                </div>
+        <br>
+        <div class="body text-white text-center wh-100 isLoaded" id="isLoaded">
+            <div>
+                <b class="h1">PORTFOLIO</b>
+                <!-- <b class="h1 hover">Gian Carlo Magdaleno - Portfolio</b> -->
+                <br>
             </div>
+            <!-- <div class="d-flex  text-center ">
+                <a href="./stable.html" class="">
+                    <div class=" align-content-around flex-wrap flex-fill  wh-100 p-5 hover ">
+                        <b class="h1 ">Stable Version</b>
+                        <label class="hover">this is yet the most stable version of the
+                            portfolio</label> <br>
 
-            <div class="first-page center" id="top">
-                <div>
-                    <br><br>
-                    <div class="m-5 title display-1 full-w font-weight-bolder
-                    m-b-md" id="title">
-                        <img loading="eager" class="p-1 w-50 cv_pic
-                            rounded-circle" src="cv_pic.jpg"> <br>Gian Carlo<br>Magdaleno
+
+
                     </div>
-
-
-                    <br><br>
-
-                </div>
-            </div>
-
-            <div class="third-page h-100 pt-5 pb-5" id="portfolio"> <br> <br><br> <br>
-                <b class="_links h1 text-weight-bolder mb-n5"> PORTFOLIO
-                </b>
-
-                <div class="p-5 mt-n5">
-                    <div class="p-5">
-                        <a class="link_items text-dark h2 font-weight-bolder" href=./moneyloan/index.html target=_blank>
-
-                            <img loading="lazy" class="img_projects w-50" src="./moneyloan/ml.png">
-                            <br>Project #1
-
-                        </a>
-                    </div>
-                    <div class="p-5">
-                        <a class="link_items text-dark h2 font-weight-bolder" href=./ictd/index.html target=_blank>
-
-                            <img loading="lazy" class="img_projects w-50" src=ictd/ictd.png>
-                            <br>Project #2
-
-                        </a>
-                    </div>
-                    <div class="p-5">
-                        <a class="link_items text-dark h2 font-weight-bolder" href=barangay/index.html target=_blank>
-
-                            <img loading="lazy" class="img_projects w-50" src="./barangay/br.webp">
-                            <br>Project #3
-
-                        </a>
-                    </div>
-                    <div class="p-5">
-                        <a class="link_items text-dark h2 font-weight-bolder" href=jec/index.html target=_blank>
-                            <img loading="lazy" class="img_projects img-fluid w-50 jec" src="./jec/jec1_pixel_really_blue_portrait.webp">
-                            <br>Project #4
-
-                        </a>
-                    </div>
-                    <!-- 
-                <div class="sixth-page h-100 pt-5 pb-5">
-
-                </div> -->
-                    <!-- </div> -->
-                </div>
-            </div>
-            <!-- <div class="second-page center card-body pt-5 pb-5">
-                <a class="link_items p-5" href="#resume">
-                    <p>Resume</p>
                 </a>
+                <a href="./try.html">
+                    <div class="p-2 align-content-around flex-wrap flex-fill  wh-100 p-5 hover">
+                        <b class="h1">Experimental</b><br>
+                        <label class="hover">not yet finished, may break and have many bugs</label> <br>
 
-                <a class="link_items p-5" href="#contactme">
-                    <p>Contact me</p>
-                </a>
-                <a class="link_items p-5" href="#portfolio">
-                    <p>Portfolio</p>
-                </a>
-                <a class="link_items p-5" target="_blank" href="https://github.com/gcnmagdaleno">
-                    <p>GitHub</p>
+
+                    </div>
                 </a>
             </div> -->
-            <div class="fourth-page h-100 pt-5 pb-5" id="resume">
-                <br><br>
-                <b class="_links display-4 center text-white">
-                        RESUME
-                        <br> <br> <br>
-                        <a href="gian_cv_with_pic.pdf" download>
-                            <b style="padding:10px" class="link_items h3">(DOWNLOAD
-                                MY
-                                RESUME)</b> </a>
-                <!-- <div class="include-resume p-5 full-w full-h  rounded show
-                                embed-responsive-item embed-responsive
-                                "></div> -->
-                <br>
-                <iframe class=" full-h  rounded show
-                            embed-responsive-item embed-responsive
-                            embed-responsive-16by9" src="cv.html" style="border-width:0;" allowfullscreen> </iframe>
 
 
-                </b>
-            </div>
+            <!-- ======= -->
 
-
-
-
-
-
-
-
-
-            <div class="fifth-page center p-5" id="contactme">
-                <br><br>
-                <div class="hr ">
-                    <hr>
-                    <b class="_links h1">
-                            ABOUT ME <br><br></b>
-                    <hr>
-                    <div class="d-flex flex-sm-row flex-column text-break">
-                        <div class="mr-auto p-5 text-break">
-
-
-                            <h2 style="width:100%; text-align:
-                        left;">My Contacts</h2>
-
-                            <h3 style="width:100%; text-align:
-                        left;">
-
-                                <b>09227435159
-                                    <br>
-                                    09206404408
-                                    <br>
-                                    <p>giancarlonabormagdaleno@gmail.com</p>
-                                
-                                </b>
-
-
-                            </h3>
-                            </b>
-                        </div>
-                        <div class="p-5 text-break">
-                            <h2>Hire Me
-                            </h2>
-                            <br>
-                            <h3>
-                                I am easy to work with, can adjust fast to any environment,
-                                <br> eager to learn something new everytime.
-                                <br>Takes the work seriously,
-                                <br>Just needs a little guidance sometimes
-                                <br> to check if I am doing the right thing.
-                            </h3>
-
-                            <h4>
-                                <br> Hoping to be working with you or your company/organization soon!
-                                <br>
-                                <br>
-                                <br>
-                            </h4>
-                        </div>
+            <div class="container-fluid text-center text-wrap wh-100">
+                <div class="row">
+                    <div class="h1 col-sm-6 col-md-6 col-lg-6 wh-100 p-5 hover">
+                        <a href="./stable.html">
+                            Stable Version
+                            <!-- <label class="hover col-sm-6 col-md-6 col-lg-6 wh-100 p-5">
+                                this is yet the
+                                most
+                                stable version of
+                                the
+                                portfolio
+                            </label> -->
+                        </a>
                     </div>
 
-                    <div class="rating  contact_numbers mt-n5" id="skills">
-
-                        <div class="skills title h1 center full-w">Skills</div>
-                        <div class="rating rounded shadow" data-toggle="tooltip" data-placement="top" title="Tooltip on top" role="tootltip">
-
-                            <b>PHP</b><br>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-
-                        <div class="rating rounded shadow">
-
-                            <b>CSS</b><br>
-
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-
-                        </div>
-
-                        <div class="rating rounded shadow">
-
-                            <b>HTML</b><br>
-
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-
-                        </div>
-
-                        <div class="rating rounded shadow">
-
-                            <b>JAVASCRIPT</b><br>
-
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-
-                        </div>
-
-                        <div class="rating rounded shadow">
-
-                            <b>ANDROID<br> (JAVA)</b><br>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-
-                        <div class="rating rounded shadow">
-
-                            <b>DATABASES <br>(MYSQL, FIREBASE)</b>
-                            <br>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-
-                        </div>
-
-                        <div class="rating rounded shadow">
-
-                            <b>VB.NET</b><br>
-
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-
-                        </div>
-
-                        <div class="rating rounded shadow">
-
-                            <b>LARAVEL</b><br>
-
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-
-                        </div>
-
-                        <div class="rating rounded shadow">
-
-                            <b>JIRA</b><br>
-
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-
-                        </div>
-
-                        <div class="rating rounded shadow">
-
-                            <b>GIT</b><br>
-
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
+                    <div class="h1 col-sm-6 col-md-6 col-lg-6 wh-100 p-5 hover">
+                        <a href="./try.html">
+                            Experimental
+                            <!-- <label class="hover col-sm-6 col-md-6 col-lg-6 wh-100 p-5">
+                                not yet finished, may
+                                break and have many
+                                bugs
+                            </label> -->
+                        </a>
                     </div>
-                </div>
-
-                <!-- 
-                <div class="row full-w p-5 m-3">
-                    <div class="col p-5 m-3">Learn more about coding</div>
-                    <div class="col p-5 m-3">What I like to do during my free time</div>
-                    <div class="col p-5 m-3">Practice coding</div>
-                </div>
-
-                <div class="row full-w p-5 m-3">
-                    <div class="col p-5 m-3">Listen to music</div>
-                    <div class="col p-5 m-3">Eat a lot</div>
-                    <div class="col p-5 m-3">Watch tons of videos/series</div>
-                </div>
-
-
-                <div class="row full-w p-5 m-3">
-                    <div class="col p-5 m-3">I like moba games</div>
-                    <div class="col p-5 m-3">I also like puzzle games</div>
-                    <div class="col p-5 m-3">I really really like <br> interactive story based games, like Life is Strange 1 & 2</div>
-                </div> -->
-
-
-
-
-                <div class="map" id="location">
-
-                    <h1 id="map">My Location</h1>
-
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4475.2796639136195!2d121.05879851521335!3d14.552605989833035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9afab7b7317%3A0xb83f943fe4403e96!2sGlenn&#39;s%20Pad!5e1!3m2!1sen!2sph!4v1600518050336!5m2!1sen!2sph"
-                        width="800" height="700" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-
                 </div>
             </div>
         </div>
-        <img class="cursor" loading="eager" src="./cursor1.png" width="50" height="50" alt="cursor">
     </center>
-
 </body>
 
 </html>
-
 <script src="./cursor.js" async></script>
-<script type="text/javascript" src="js/popper.min.js"></script>
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/popper.min.js"></script>
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/bootstrap.min.js"></script>
 <script src="./smooth_scrolling.js" async></script>
 <script type="text/javascript" src="./cv/wz_jsgraphics.js"></script>
 <script>
-    $('.include-resume').load('cv.html');
+    $(document).ready(function () {
+        //shows the whole page when fully loaded
+        $("#isLoaded").show()
+    });
 </script>
